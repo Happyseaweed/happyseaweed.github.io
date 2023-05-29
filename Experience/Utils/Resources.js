@@ -48,7 +48,7 @@ export default class Resources extends EventEmitter{
             // else if (asset.type === "imageTexture"){
                 
             // }
-            else if (asset.type === "videoTexture" || asset.type === "imageTexture"){
+            else if (asset.type === "videoTexture"){
                 this.video = {};
                 this.videoTexture = {};
                 
@@ -58,15 +58,17 @@ export default class Resources extends EventEmitter{
                 this.video[asset.name].muted = true;
                 this.video[asset.name].autoplay = true;
                 this.video[asset.name].loop = true;
+                this.video[asset.name].needsUpdate = true;
                 this.video[asset.name].play();
 
                 this.videoTexture[asset.name] = new THREE.VideoTexture(this.video[asset.name]);
                 
-                this.videoTexture[asset.name].flipY = true;
+                // this.videoTexture[asset.name].flipY = true;
                 this.videoTexture[asset.name].minFilter = THREE.NearestFilter;
                 this.videoTexture[asset.name].magFilter = THREE.NearestFilter;
                 this.videoTexture[asset.name].generateMipmaps = false;
                 this.videoTexture[asset.name].colorSpace = THREE.SRGBColorSpace;
+
                 this.singleAssetLoaded(asset, this.videoTexture[asset.name]);
             }
          }
@@ -79,7 +81,7 @@ export default class Resources extends EventEmitter{
         // console.log(file);
         // Check if all assets are loaded:
         if (this.loaded === this.queue){
-            // console.log("All assets loaded.")
+            console.log("All assets loaded.")
             this.emit("ready");
         }
     }

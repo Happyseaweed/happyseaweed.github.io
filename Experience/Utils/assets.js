@@ -7,13 +7,13 @@ export default [
     {
         name: "campsite",
         type: "glbModel",
-        path: "/models/camp_export2.glb",
+        path: "/models/camp_export3.glb",
     },
-    {
-        name: "screen1",
-        type: "imageTexture",
-        path: "/textures/screen1.jpeg",
-    },
+    // {
+    //     name: "screen1",
+    //     type: "imageTexture",
+    //     path: "/textures/screen1.jpeg",
+    // },
     {
         name: "video1",
         type: "videoTexture",

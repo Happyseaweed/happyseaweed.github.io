@@ -13,19 +13,29 @@ export default class Environment {
 
     setSunlight() {
         // Day time:
-        this.sunLight = new THREE.DirectionalLight("#fff7d1", 0.9);
+        this.sunLight = new THREE.DirectionalLight("#fff7d1", 0.7);
         // Sunset:
         // this.sunLight = new THREE.DirectionalLight("#ffcc73", 0.5);
         
         this.sunLight.castShadow = true;
+        this.sunLight.shadow.camera.near = 0.5;
         this.sunLight.shadow.camera.far = 20;
         this.sunLight.shadow.mapSize.set(4096, 4096);
         this.sunLight.shadow.normalBias = 0.05;
-        this.sunLight.position.set(2, 10, 3);
+        this.sunLight.position.set(4, 25, 3);
+        
+        // Set the shadow camera to be bigger so the entire scene is enclosed.
+        this.sunLight.shadow.camera.scale.set(2, 2, 2);
+
+        const helper1 = new THREE.CameraHelper(this.sunLight.shadow.camera);
+        const sunLightHelper = new THREE.DirectionalLightHelper(this.sunLight);
+        this.scene.add(helper1);
+        this.scene.add(sunLightHelper);
         this.scene.add(this.sunLight);
 
         // Ambient light for niceness :P
         this.ambientLight = new THREE.AmbientLight("#ffffff", 0.1);
+        this.ambientLight.castShadow = false;
         this.scene.add(this.ambientLight);
 
 
@@ -63,13 +73,15 @@ export default class Environment {
         this.satLight.decay = 5;
         this.satLight.intensity = 4;
         this.satLight.distance = 3;
-        this.satLight.castShadow = true;
+        this.satLight.castShadow = false;
         this.satLight.shadow.camera.far = 20;
         this.satLight.shadow.mapSize.set(4096, 4096);
         this.satLight.shadow.normalBias = 0.05;
         this.satLight.position.set(-4.25, 3.9, 1.5);
         // this.tentLight.scale.set(0.5);
         this.hper2 = new THREE.PointLightHelper(this.satLight, 1);
+        this.satLightShadowHelper = new THREE.CameraHelper(this.satLight.shadow.camera);
+        // this.scene.add(this.satLightShadowHelper);
         this.scene.add(this.satLight);
         // this.scene.add(this.hper2);
 

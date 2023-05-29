@@ -1,9 +1,10 @@
-import * as THREE from 'three'
-import Experience from "../Experience.js"
+import * as THREE from 'three';
+import Experience from "../Experience.js";
 
-import Campsite from "./Campsite.js"
+import Campsite from "./Campsite.js";
 import Environment from './Environment.js';
-
+import Controls from "./Controls.js";
+import Floor from "./Floor.js";
 
 export default class World {
     constructor() {
@@ -16,7 +17,10 @@ export default class World {
 
         this.resources.on("ready", ()=>{
             this.environment = new Environment();
-            this.campsite = new Campsite();
+            this.controls = new Controls();
+            // this.floor = new Floor();
+            // this.campsite = new Campsite();
+            this.floor = new Floor();
             console.log("Created World");
         })
 
@@ -29,6 +33,12 @@ export default class World {
     }
 
     update() {
+        if (this.controls){
+            this.controls.update();
+        }
 
+        if (this.campsite){
+            this.campsite.update();
+        }
     }
 }

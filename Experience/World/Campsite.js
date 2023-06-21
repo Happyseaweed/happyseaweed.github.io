@@ -79,7 +79,7 @@ export default class Campsite {
     }
 
     resize() {
-
+        
     }
 
     update() {

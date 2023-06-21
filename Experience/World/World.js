@@ -19,7 +19,7 @@ export default class World {
             this.environment = new Environment();
             this.controls = new Controls();
             // this.floor = new Floor();
-            // this.campsite = new Campsite();
+            this.campsite = new Campsite();
             this.floor = new Floor();
             console.log("Created World");
         })

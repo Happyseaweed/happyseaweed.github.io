@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
+import GSAP from "gsap";
 
 export default class Environment {
     constructor() {
@@ -13,7 +14,7 @@ export default class Environment {
 
     setSunlight() {
         // Day time:
-        this.sunLight = new THREE.DirectionalLight("#fff7d1", 0.7);
+        this.sunLight = new THREE.DirectionalLight("#fff7d1", 1);
         // Sunset:
         // this.sunLight = new THREE.DirectionalLight("#ffcc73", 0.5);
         
@@ -21,71 +22,61 @@ export default class Environment {
         this.sunLight.shadow.camera.near = 0.5;
         this.sunLight.shadow.camera.far = 20;
         this.sunLight.shadow.mapSize.set(4096, 4096);
-        this.sunLight.shadow.normalBias = 0.05;
-        this.sunLight.position.set(4, 25, 3);
-        
+        this.sunLight.shadow.normalBias = 0.1;
+        this.sunLight.position.set(0, 38, 5);
         // Set the shadow camera to be bigger so the entire scene is enclosed.
-        this.sunLight.shadow.camera.scale.set(2, 2, 2);
-
-        const helper1 = new THREE.CameraHelper(this.sunLight.shadow.camera);
-        const sunLightHelper = new THREE.DirectionalLightHelper(this.sunLight);
-        this.scene.add(helper1);
-        this.scene.add(sunLightHelper);
+        this.sunLight.shadow.camera.scale.set(5, 5, 5);
         this.scene.add(this.sunLight);
 
         // Ambient light for niceness :P
-        this.ambientLight = new THREE.AmbientLight("#ffffff", 0.1);
+        this.ambientLight = new THREE.AmbientLight("#ffffff", 0.2);
         this.ambientLight.castShadow = false;
         this.scene.add(this.ambientLight);
+    }
 
+    switchTheme(theme) {
+        if (theme === "dark"){
+            console.log("dark theme activated");
+            GSAP.to(this.sunLight.color, {
+                r: 15/255,
+                g: 15/255,
+                b: 16/255,
+            });
+            GSAP.to(this.ambientLight.color, {
+                r: 0.2,
+                g: 0.2,
+                b: 0.2,
+            });
+            GSAP.to(this.experience.world.campsite.fireLight, {
+                distance: 10,
+            });
+            GSAP.to(this.experience.world.campsite.tentLight, {
+                intensity: 0.5,
+            });
 
-        // this.campfireLight = new THREE.light
-        this.fireLight = new THREE.PointLight("#ff5500", 20);
-        // this.fireLight.decay = 3;
-        this.fireLight.intensity = 4;
-        this.fireLight.distance = 4;
-        this.fireLight.castShadow = true;
-        this.fireLight.shadow.camera.far = 20;
-        this.fireLight.shadow.mapSize.set(4096, 4096);
-        this.fireLight.shadow.normalBias = 0.05;
-        this.fireLight.position.set(5.9, 2, -2.1);
-        // this.tentLight.scale.set(0.5);
-        this.hper3 = new THREE.PointLightHelper(this.fireLight, 1);
-        this.scene.add(this.fireLight);
-        // this.scene.add(this.hper3);
+        } else {
+            console.log("light theme activated");
+            GSAP.to(this.sunLight.color, {
+                r: 255 / 255,
+                g: 247 / 255,
+                b: 209 / 255,
+            });
+            GSAP.to(this.sunLight, {
+                intensity: 0.70,
+            });
+            GSAP.to(this.ambientLight.color, {
+                r: 1,
+                g: 1,
+                b: 1,
+            });
+            GSAP.to(this.experience.world.campsite.fireLight, {
+                distance: 4,
+            });
+            GSAP.to(this.experience.world.campsite.tentLight, {
+                intensity: 0.25,
+            });
 
-
-
-        // Tent light
-        this.tentLight = new THREE.PointLight("#ffffff", 0.25);
-        this.tentLight.castShadow = true;
-        this.tentLight.shadow.camera.far = 20;
-        this.tentLight.shadow.mapSize.set(4096, 4096);
-        this.tentLight.shadow.normalBias = 0.05;
-        this.tentLight.position.set(-6, 5, -3.15);
-        // this.tentLight.scale.set(0.5);
-        this.hper = new THREE.PointLightHelper(this.tentLight, 1);
-        this.scene.add(this.tentLight);
-        // this.scene.add(this.hper);
-
-        // Satellite Dish Light
-        this.satLight = new THREE.PointLight("#0066ff", 20);
-        this.satLight.decay = 5;
-        this.satLight.intensity = 4;
-        this.satLight.distance = 3;
-        this.satLight.castShadow = false;
-        this.satLight.shadow.camera.far = 20;
-        this.satLight.shadow.mapSize.set(4096, 4096);
-        this.satLight.shadow.normalBias = 0.05;
-        this.satLight.position.set(-4.25, 3.9, 1.5);
-        // this.tentLight.scale.set(0.5);
-        this.hper2 = new THREE.PointLightHelper(this.satLight, 1);
-        this.satLightShadowHelper = new THREE.CameraHelper(this.satLight.shadow.camera);
-        // this.scene.add(this.satLightShadowHelper);
-        this.scene.add(this.satLight);
-        // this.scene.add(this.hper2);
-
-
+        }
     }
 
     resize() {

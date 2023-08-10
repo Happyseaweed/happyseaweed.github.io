@@ -29,6 +29,15 @@ export default class Controls {
                 this.mapInitPosition = child.position;
             }
         });
+
+        this.site.children.forEach((child) => {
+             if (child.name === 'Image2_base') {
+                console.log("image2 texture found");
+                console.log(child.children[0]);
+                this.image1_texture = child.children[0];
+                this.image1_textureInitPosition = child.children[0].position;
+             }
+        });
         
 
         this.progress = 0;
@@ -205,39 +214,39 @@ export default class Controls {
 
                 this.firstMoveTimeline.to(
                     this.camera.perspectiveCamera.position, {
-                        x: 5,
+                        x: 3.75,
                         y: 1.75,
-                        z: 1,
+                        z: 0,
                     },
                     'camera-move1'
                 );
 
                 this.firstMoveTimeline.to(
                     this.controls.target, {
-                        x: 1.3,
-                        y: 0.6,
-                        z: -1.3,
+                        x: 2.75,
+                        y: 1.25,
+                        z: -1.5,
                     },
                     'camera-move1'
                 );
 
-                this.firstMoveMapTimeline.to(
-                    this.map.position, {
-                        x: 4.3,
-                        y: 1.5,
-                        z: 0.2,
-                    },
-                    'map-move1'
-                );
+                // this.firstMoveMapTimeline.to(
+                //     this.map.position, {
+                //         x: 4.3,
+                //         y: 1.5,
+                //         z: 0.2,
+                //     },
+                //     'map-move1'
+                // );
 
-                this.firstMoveMapTimeline.to(
-                    this.map.rotation, {
-                        x: 2*Math.PI-0.3,
-                        y: 1,
-                        z: 0.2,
-                    },
-                    'map-move1'
-                );
+                // this.firstMoveMapTimeline.to(
+                //     this.map.rotation, {
+                //         x: 2*Math.PI-0.3,
+                //         y: 1,
+                //         z: 0.2,
+                //     },
+                //     'map-move1'
+                // );
 
                 // Second Move Section ---------------------------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({
@@ -252,23 +261,23 @@ export default class Controls {
                     }
                 });
 
-                this.secondMoveTimeline.to(
-                    this.map.position, {
-                        x: this.mapInitPosition.x,
-                        y: this.mapInitPosition.y+0.05,
-                        z: this.mapInitPosition.z,
-                    },
-                    'map-move2',             
-                );
+                // this.secondMoveTimeline.to(
+                //     this.map.position, {
+                //         x: this.mapInitPosition.x,
+                //         y: this.mapInitPosition.y+0.05,
+                //         z: this.mapInitPosition.z,
+                //     },
+                //     'map-move2',             
+                // );
 
-                this.secondMoveTimeline.to(
-                    this.map.rotation, {
-                        x: -1,
-                        y: 0,
-                        z: 0,
-                    },
-                    'map-move2',         
-                );
+                // this.secondMoveTimeline.to(
+                //     this.map.rotation, {
+                //         x: -1,
+                //         y: 0,
+                //         z: 0,
+                //     },
+                //     'map-move2',         
+                // );
                 
 
                 this.secondMoveTimeline.to(

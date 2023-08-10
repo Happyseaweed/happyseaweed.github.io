@@ -40,7 +40,7 @@ export default class Environment {
             GSAP.to(this.sunLight.color, {
                 r: 15/255,
                 g: 15/255,
-                b: 16/255,
+                b: 15/255,
             });
             GSAP.to(this.ambientLight.color, {
                 r: 0.2,
@@ -52,6 +52,9 @@ export default class Environment {
             });
             GSAP.to(this.experience.world.campsite.tentLight, {
                 intensity: 0.5,
+            });
+            GSAP.to(this.experience.world.campsite.mapLight, {
+                intensity: 3,
             });
 
         } else {
@@ -75,7 +78,9 @@ export default class Environment {
             GSAP.to(this.experience.world.campsite.tentLight, {
                 intensity: 0.25,
             });
-
+            GSAP.to(this.experience.world.campsite.mapLight, {
+                intensity: 0,
+            });
         }
     }
 

@@ -1,5 +1,7 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
+import { RectAreaLightHelper } from 'three/addons/helpers/RectAreaLightHelper.js';
+
 import GSAP from "gsap";
 
 export default class Campsite {
@@ -22,10 +24,55 @@ export default class Campsite {
         };
 
         this.setModel();
+        this.setImages();
         // this.onMouseMove();
         this.setAnimation();
+    }
 
-        // console.log(this.actualSite);
+    setImages() {
+        const imageCanvas = document.createElement('canvas');
+        const context = imageCanvas.getContext('2d');
+
+        imageCanvas.width = imageCanvas.height = 128;
+
+        const textureCanvas = new THREE.CanvasTexture(imageCanvas);
+        textureCanvas.colorSpace = THREE.SRGBColorSpace;
+        
+        const materialCanvas = new THREE.MeshBasicMaterial( { map: textureCanvas } );
+        const geometry = new THREE.PlaneGeometry( 0.012, 0.012 );
+
+        const meshCanvas = new THREE.Mesh( geometry, materialCanvas );
+        meshCanvas.rotation.x = - Math.PI / 2;
+        meshCanvas.scale.set( 1, 1, 1 );
+
+        const callbackLogo = (texture, material, size, x, y, z) => {
+            const image = texture.image;
+            
+            this.actualSite.add(meshCanvas);
+
+            const geometry = new THREE.PlaneGeometry(size, size);
+            const mesh = new THREE.Mesh( geometry, material );
+
+            addPainting( this.actualSite, mesh );
+
+            function addPainting( zscene, zmesh ) {
+                zmesh.scale.x = image.width / 100;
+                zmesh.scale.y = image.height / 100;
+                zmesh.position.set(x, y, z);
+                zscene.add( zmesh );
+            }
+        };
+
+        // Wait this is legal??? Isn't this circular?
+        const waterloo = new THREE.TextureLoader().load('textures/waterloo_logo.png', ((texture) => callbackLogo(texture, materialPainting, 0.012, 2.82, 1.335, -2.46)) );
+        const materialPainting = new THREE.MeshBasicMaterial({color: 0xffffff, map: waterloo});
+        waterloo.colorSpace = THREE.SRGBColorSpace;
+        waterloo.mapping = THREE.UVMapping;
+        
+        const bdo = new THREE.TextureLoader().load('textures/bdo_logo.png', ((texture) => callbackLogo(texture, materialPainting_bdo, 0.06, 3.05, 1.2, -2.48)));
+        const materialPainting_bdo = new THREE.MeshBasicMaterial({color: 0xffffff, map: bdo});
+        bdo.colorSpace = THREE.SRGBColorSpace;
+        bdo.mapping = THREE.UVMapping;
     }
 
     setModel() {
@@ -82,6 +129,15 @@ export default class Campsite {
         // this.satLight.add(helper3);
         // this.actualSite.add(helper3);
         this.actualSite.add(this.satLight);
+
+        // Map board light, tent-light can be too harsh, need this to light up map
+        this.mapLight = new THREE.RectAreaLight("#ffffff", 0.01, 0.1, 0.75);
+        this.mapLight.receiveShadow = false;
+        this.mapLight.position.set(3.146837, 1.69, -2.45);
+        this.mapLight.lookAt(3.14, 0, -2.45);
+
+        // this.actualSite.add(helper5);
+        // this.actualSite.add(this.mapLight);
 
         // Testing light
         this.testLight = new THREE.PointLight('#FFFF00', 1);

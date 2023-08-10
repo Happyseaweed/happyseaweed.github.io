@@ -7,16 +7,11 @@ export default [
     {
         name: "campsite",
         type: "glbModel",
-        path: "/models/camp_export6.glb",
+        path: "/models/camp_export10.glb",
     },
     // {
     //     name: "screen1",
     //     type: "imageTexture",
-    //     path: "/textures/screen1.jpeg",
-    // },
-    // {
-    //     name: "video1",
-    //     type: "videoTexture",
-    //     path: "/textures/kda.mp4",
-    // },   
+    //     path: "/textures/waterloo_logo.png",
+    // },  
 ];

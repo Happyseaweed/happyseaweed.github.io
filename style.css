@@ -10,6 +10,14 @@ html, body {
   font-family: 'Oxygen Mono', monospace;
 }
 
+.light-theme::-webkit-scrollbar {
+  display: none;
+}
+
+.dark-theme::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --text-black: #333332;
   --primary-color: #FAF4E5;
@@ -48,16 +56,17 @@ html, body {
   --color-text: #333332;
   --color-section-background: var(--color-background-light);
   --color-section-title: var(--russet);
-  --color-toggle-background: #FAF4E5;
-  --color-toggle-circle: var(--apple-green);
+  --color-toggle-background: #3e3a3b;
+  /* --color-toggle-circle: var(--apple-green); */
+  --color-toggle-circle: #98bfbe;
 }
 
 .dark-theme {
   --color-text: #FAF4E5;
   --color-section-background: var(--color-background-dark);
   --color-section-title: #FAF4E5;
-  --color-toggle-background: #FAF4E5;
-  --color-toggle-circle: var(--night);
+  --color-toggle-background: #3e3a3b;
+  --color-toggle-circle: var(--brown-sugar);
 }
 
 /* Experience ------------------------------------- */
@@ -128,7 +137,10 @@ html, body {
   border-radius: 999px;
   margin: 0px 16px;
   border: none;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  /* box-shadow: inset 0 0 50px #fff; */
+  box-shadow: 0 0 10px #6a6a6a;
+
 
   padding: 0px 6px;
 }
@@ -283,27 +295,43 @@ html, body {
 
 .hero-main {
   position: absolute;
-  bottom: 268px;
+  bottom: 225px;
   left: 0;
+
+  background-color: var(--color-section-background);
+  padding: 20px 20px;
+  box-sizing: border-box;
+
+  box-shadow: 20px 20px;
 }
 
 .hero-second {
   position: absolute;
-  top: calc(50% - 120px);
+  top: calc(50% - 100px);
   right: 0;
+
+  background-color: var(--color-section-background);
+  padding: 20px 20px;
+  box-sizing: border-box;
+
+  box-shadow: 10px 10px;
 }
 
 .hero-main-title {
   font-size: 64px;
+  color: var(--color-section-title);
 }
 
 .hero-main-description {
   font-size: 20px;
+  color: var(--color-section-title);
 }
 
 .hero-second-subheading {
   font-size: 32px;
   text-transform: uppercase;
+
+  color: var(--color-section-title);
 }
 
 

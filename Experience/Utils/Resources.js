@@ -45,9 +45,10 @@ export default class Resources extends EventEmitter{
                     this.singleAssetLoaded(asset, file);
                 });
             }
-            // else if (asset.type === "imageTexture"){
-                
-            // }
+            else if (asset.type === "imageTexture"){
+                const texture = new THREE.TextureLoader().load(asset.path);
+                this.singleAssetLoaded(asset, texture);
+            }
             else if (asset.type === "videoTexture"){
                 this.video = {};
                 this.videoTexture = {};

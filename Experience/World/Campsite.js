@@ -94,19 +94,31 @@ export default class Campsite {
         this.actualSite.add(this.fireLight);
 
         // Tent light
-        this.tentLight = new THREE.PointLight("#ffffff", 0.15);
+        this.tentLight = new THREE.PointLight("#ffffff", 0.10);
         this.tentLight.castShadow = true;
-        this.tentLight.shadow.camera.far = 20;
-        this.tentLight.shadow.mapSize.set(4096, 4096);
+        this.tentLight.shadow.camera.far = 40;
+        this.tentLight.shadow.mapSize.set(2048, 2048);
         this.tentLight.shadow.normalBias = 0.05;
         this.tentLight.position.set(-2.5, 1.5, -1.6);
-        const helper2 = new THREE.PointLightHelper(this.tentLight);
+        // const helper2 = new THREE.PointLightHelper(this.tentLight);
         // this.tentLight.add(helper2);
         // this.actualSite.add(helper2);
         this.actualSite.add(this.tentLight);
 
+        // Tent table light
+        this.tentTableLight = new THREE.PointLight("#ffffff", 0.2);
+        this.tentTableLight.castShadow = true;
+        this.tentTableLight.shadow.camera.far = 40; 
+        this.tentTableLight.shadow.mapSize.set(2048, 2048);
+        this.tentTableLight.shadow.normalBias = 0.05;
+        this.tentTableLight.position.set(-1.6, 1.2, -0.9);
+        // this.tableLightHelper = new THREE.PointLightHelper(this.tentTableLight, 0.1);
+        this.actualSite.add(this.tentTableLight);
+        // this.actualSite.add(this.tableLightHelper);
+        
+
         // Tent ambient light
-        this.tentAmbientLight = new THREE.PointLight("#ffffff", 0.05);
+        this.tentAmbientLight = new THREE.PointLight("#ffffff", 0.1);
         this.tentAmbientLight.castShadow = true;
         this.tentAmbientLight.shadow.camera.far = 20;
         this.tentAmbientLight.shadow.mapSize.set(4096, 4096);

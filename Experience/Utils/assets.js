@@ -7,7 +7,7 @@ export default [
     {
         name: "campsite",
         type: "glbModel",
-        path: "/models/camp_export10.glb",
+        path: "/models/camp_export11.glb",
     },
     // {
     //     name: "screen1",

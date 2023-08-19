@@ -50,9 +50,9 @@ export default class Environment {
             GSAP.to(this.experience.world.campsite.fireLight, {
                 distance: 10,
             });
-            GSAP.to(this.experience.world.campsite.tentLight, {
-                intensity: 0.5,
-            });
+            // GSAP.to(this.experience.world.campsite.tentLight, {
+            //     intensity: 0.15,
+            // });
             GSAP.to(this.experience.world.campsite.mapLight, {
                 intensity: 3,
             });

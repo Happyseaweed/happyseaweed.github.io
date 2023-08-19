@@ -42,6 +42,7 @@ export default class Resources extends EventEmitter{
          for(const asset of this.assets) {
             if (asset.type === "glbModel"){
                 this.loaders.gltfLoader.load(asset.path, (file)=>{
+                    
                     this.singleAssetLoaded(asset, file);
                 });
             }
@@ -77,6 +78,9 @@ export default class Resources extends EventEmitter{
     
     singleAssetLoaded(asset, file) {
         this.items[asset.name] = file;
+        this.items[asset.name].castShadow = true;
+        this.items[asset.name].receiveShadow = true;
+        
         this.loaded++;
         // console.log("Asset is loading...");
         // console.log(file);

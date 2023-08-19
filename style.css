@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Oxygen+Mono&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +30,9 @@ html, body {
 
   /* Light Theme */
   --color-text-light: #333332;
-  --color-background-light: #efdfd4;
+  /* --color-background-light: #d6bfaf; */
+  /* --color-background-light: #ffd4b5; */
+  --color-background-light: #f1cd6c;
   
 
   /* Dark theme */
@@ -53,20 +59,25 @@ html, body {
 }
 
 .light-theme {
-  --color-text: #333332;
-  --color-section-background: var(--color-background-light);
-  --color-section-title: var(--russet);
+  /* --color-text: #333332; */
+  --color-text: #FAF4E5;
+  --color-text-light: #FAF4E5;
+  --color-text-dark: #333332;
+  --color-section-background: var(--color-background-dark);
+  /* --color-section-title: var(--russet); */
+  --color-section-title: #FAF4E5;
   --color-toggle-background: #3e3a3b;
-  /* --color-toggle-circle: var(--apple-green); */
   --color-toggle-circle: #98bfbe;
 }
 
 .dark-theme {
   --color-text: #FAF4E5;
+  --color-text-light: #FAF4E5;
+  --color-text-dark: #333332;
   --color-section-background: var(--color-background-dark);
   --color-section-title: #FAF4E5;
   --color-toggle-background: #3e3a3b;
-  --color-toggle-circle: var(--brown-sugar);
+  --color-toggle-circle: var(--color-background-dark);
 }
 
 /* Experience ------------------------------------- */
@@ -152,7 +163,7 @@ html, body {
   width: 28px;
   height: 28px;
   background-color: var(--color-toggle-circle);
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .slide {
@@ -161,19 +172,78 @@ html, body {
 
 /* Formatting ----------------------------------------- */
 
+.profile-image {
+  width: 200px;
+  border-radius: 30px;
+  padding: 10px 10px;
+}
+
+.waterloo-link {
+  box-shadow: inset 0 -5px 0 0 #ffd64e;
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.waterloo-link:hover {
+  color: var(--color-text-dark);
+  box-shadow: inset 220px 0 0 0 #ffd64e;;
+}
+
+.creative-link {
+  box-shadow: inset 0 -5px 0 0 #b5c036;
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.creative-link:hover {
+  color: var(--color-text-dark);
+  box-shadow: inset 220px 0 0 0 #b5c036;
+}
+
+.react-link {
+  box-shadow: inset 0 -5px 0 0 #61dbfb;
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.react-link:hover {
+  color: var(--color-text-dark);
+  box-shadow: inset 220px 0 0 0 #61dbfb;
+}
+
+.bdo-link {
+  box-shadow: inset 0 -5px 0 0 #ef243a;
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.bdo-link:hover {
+  color: var(--color-text-light);
+  box-shadow: inset 220px 0 0 0 #ef243a;
+}
+
 .section-margin {
-  /* background-color: aquamarine; */
   height: 1500px;
   width: 100%;
 }
 
 .section {
   width: 40%;
-  padding: 1000px 4%;
+  padding: 800px 4%;
   margin: 0;
-  /* background-color:  */
   background-color: var(--color-section-background);
-
 }
 
 .first-section {
@@ -209,7 +279,7 @@ html, body {
 
 .section-detail-wrapper {
   position: relative;
-  padding: 20% 5%;
+  padding: 10% 0%;
   color: var(--color-text);
 }
 
@@ -217,7 +287,7 @@ html, body {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.8;
-  margin-top: 64px;
+  /* margin-top: 64px; */
 }
 
 .section-text {
@@ -288,27 +358,31 @@ html, body {
 .hero-wrapper {
   position: relative;
   height: 100%;
-  width: calc(100% - 160px);
+  width: calc(100% - 60px);
   margin: 0 auto;
-  max-width: 1500px;
+  max-width: 1700px;
 }
 
 .hero-main {
   position: absolute;
-  bottom: 225px;
+  bottom: 125px;
   left: 0;
 
   background-color: var(--color-section-background);
-  padding: 20px 20px;
+  backdrop-filter: blur(8px);
+
+  padding: 40px 40px;
   box-sizing: border-box;
 
-  box-shadow: 20px 20px;
+  box-shadow: 20px 20px #181818;
+  border-radius: 20px;
 }
 
 .hero-second {
   position: absolute;
   top: calc(50% - 100px);
-  right: 0;
+  /* right: 0; */
+  left: 0;
 
   background-color: var(--color-section-background);
   padding: 20px 20px;
@@ -320,11 +394,14 @@ html, body {
 .hero-main-title {
   font-size: 64px;
   color: var(--color-section-title);
+  /* color: #ffffff; */
 }
 
 .hero-main-description {
   font-size: 20px;
   color: var(--color-section-title);
+  /* color: #ffffff; */
+
 }
 
 .hero-second-subheading {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet">
     <title>Vite App</title>
   </head>
 
@@ -39,16 +40,18 @@
         <section class="hero">
           <div class="hero-wrapper">
 
-            <div class="hero-main">
+            <div class="hero-main w-[37vw]">
               <h1 class="hero-main-title">Siwei's Campsite</h1>
-              <p class="hero-main-description">A cozy yet adventurous escape</p>
+              <!-- <p class="hero-main-description">A cozy yet adventurous escape</p> -->
+              <p class="hero-main-description break-words font-medium">
+                A wilderness-loving and idea-nurturing enthusiast who thrives on exploring the unknown.
+              </p>
             </div>
 
-            <div class="hero-second">
-              <p class="hero-second-subheading">PORTFOLIO</p>
-              <!-- <p class="hero-second-subheading">To Explore</p> -->
-            </div>
-
+            <!-- <div class="hero-second">
+              <p class="hero-second-subheading">DAY 89</p>
+              <p class="hero-second-subheading">To Explore</p>
+            </div> -->
 
           </div>
         </section>
@@ -65,22 +68,256 @@
               <div class="section-title-decoration styleThree"></div>
             </h1>
 
-            <span class="section-number">01</span>
+            <span class="section-number first-move-detail">01</span>
           </div>  
 
           <div class="section-detail-wrapper">
-            <h2 class="section-heading">Computer Science Student @ Waterloo</h2>
-            <p>Hello there! Thanks for stopping by. My name is Siwei (pronounced like seaweed), and
-              I am currently a second year computer-science student at the University of Waterloo in Canada.</p>
-          
-            <h3 class="section-heading">Full-stack Developer Intern @ BDO Canada LLP</h3>
-            <p>Lead front-end and UI/UX development of internal investment project.</p>
-            <p>Wrote methods to fetch and send data to backend for processing and storage purposes.</p>
+            <div class="flex flex-col md:flex-row">
+              <div class="shrink-0 mt-[70px] mr-[10px] place-content-center">
+                  <img class="w-[210px] rounded-xl place-content-center" src="./images/Orange_Flower.png"/>
+              </div>
+
+              <div>
+                <h2 class="section-heading mt-[64px]">Hey there! I'm Siwei</h2>
+                <p class="p-2">I'm a computer science student at the <a class="waterloo-link" href="https://en.wikipedia.org/wiki/University_of_Waterloo" target="_blank">University of Waterloo</a>. </p>
+                
+                <p class="p-2">I tackle challenging problems from a <a class="creative-link" href="#">creative</a> point of view, striving to find the most optimized and elegant solution.</p>
+                <!-- <p class="p-4">In my book, challenging problems are just like piñatas – smack 'em with the right idea, and solutions come tumbling out in a shower of confetti!</p> -->
+              </div>
+            </div>
             
-            <h3 class="section-heading">Hobbies and Interests</h3>
-            <p>I love indulging myself in fun and challenging things. Curiosity leads me, I enjoy getting my hands dirty and I value the ability to see an idea through to the end.</p>
-            <p>Music is also a huge part of my life, I listen to a variety of genres ranging from orchestral to indie to synthwave. I also play the guitar, piano, trombone and a bit of drums.</p>
-            <p>For my career, I am interested in cybersecurity, algorithmic</p>
+            <h3 class="section-heading mt-[100px]">More About Me</h3>
+
+            <p>
+              In my spare time, I like to listen to and play music, mainly the guitar and piano.
+              I also enjoy cooking and racing against the clock to see how fast I can make dishes.
+              Career-wise, I am interested in technical & algorithmic topics. Things like robotics, 
+              machine learning and cryotpgraphy are exciting.
+            </p>
+            
+            <div class="mt-[40px] p-6 rounded-lg bg-[#f4be82]">
+              <p class="text-[#111518ff] font-medium">
+                I like taking risks and getting my hands dirty. Being thrown into the unknown and 
+                then finding a way out and optimizing my approach each time is absolutely rewarding
+              </p>
+            </div>
+            <!-- Perhaps a more detailed description -->
+            <!-- <ul class="list-disc">
+              <li class="ml-10 mt-1 list-item">
+                <p>
+                  Music is a big part of my life. I enjoy both listening as well as playing. 
+                  Since I started university, I've been teaching myself the guitar (as it's the most portable :P).
+                </p>
+              </li>
+              <li class="ml-10 mt-1 list-item">
+                <p>
+                  I have also developed an interest in cooking. It started as an alternative to the expensive cafeteria food, 
+                  but now I'm beginning to enjoy cooking as a way to de-stress.
+                </p>
+              </li>
+              <li class="ml-10 mt-1 list-item">
+                <p>
+                  I have also developed an interest in cooking. It started as an alternative to the expensive cafeteria food, 
+                  but now I'm beginning to enjoy cooking as a way to de-stress.
+                </p>
+              </li>
+            </ul> -->
+            
+            <hr class="mt-[100px]"/>
+            
+            <h3 class="section-heading mt-[100px]">Currently a full-stack intern @ <a class="bdo-link" href="https://lixar.com/" target="_blank">BDO Canada LLP</a></h3>
+
+            <ul class="list-disc">
+              <li class="ml-10 mt-1 list-item">
+                <p>
+                  Designed, implemented and deployed front-end and UI/UX of an webapp using 
+                  <a class="react-link" href="https://react.dev/" target="_blank">React.js</a>,
+                  MaterialUI and Typescript.
+                </p>
+              </li>
+              <li class="ml-10 mt-1 list-item">
+                <p>Implemented front-end Rest API endpoints for retrieving and sending data to be stored in database.</p>
+              </li>
+            </ul>
+            
+            <h3 class="section-heading mt-[100px]">Skills</h3>
+
+            <!-- <table class="w-full">
+              <tr>
+                <th class="text-left">Languages</th>
+                <th class="text-left">Frameworks/Libraries</th>
+                <th class="text-left">Tools</th>
+              </tr>
+              <tr>
+                <td class="flex flex-row align-middle">
+                  <img class="h-[50px] rounded-xl" src="./images/cpp_logo.png" title="C++"/>
+                  <div class="flex items-center ml-[10px]">C++</div>
+                </td>
+                
+                <td class="">
+                  
+                </td>
+                
+                <td class="">
+                  
+                </td>
+              </tr>
+
+            </table> -->
+
+            <table class="w-full">
+              <tr>
+                <th class="text-left" width="35%">Languages</th>
+                <th class="text-left" width="35%">Frameworks/Libraries</th>
+                <th class="text-left" width="20%">Tools</th>
+              </tr>
+              <tr>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <img class="h-[50px] rounded-xl" src="./images/cpp_logo.png" title="C++"/>
+                    <div class="flex items-center ml-[10px]">C++</div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <img class="w-[50px] rounded-xl" src="./images/react_logo.png" title="React"/>
+                    <div class="flex items-center ml-[10px]">React</div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <img class="w-[50px] rounded-xl" src="./images/git_logo.png" title="Git"/>
+                    <div class="flex items-center ml-[10px]">Git</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <img class="w-[50px] rounded-xl bg-white" src="./images/java_logo.png" title="Java"/>
+                    <div class="flex items-center ml-[10px]">Java</div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <img class="w-[50px] rounded-xl bg-white" src="./images/threejs_logo.png" title="Three JS"/>
+                    <div class="flex items-center ml-[10px]">Three JS</div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <img class="w-[50px] rounded-xl" src="./images/blender_logo.png" title="Blender"/>
+                    <div class="flex items-center ml-[10px]">Blender</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/python_logo.png" title="Python"/>
+                      <div class="flex items-center ml-[10px]">Python</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/opencv_logo.png" title="OpenCV"/>
+                      <div class="flex items-center ml-[10px]">OpenCV</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <img class="w-[50px] rounded-xl" src="./images/azure_logo.png" title="Microsoft Azure"/>
+                    <div class="flex items-center ml-[10px]">Microsoft Azure</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/ts_logo.png" title="Typescript"/>
+                      <div class="flex items-center ml-[10px]">Typescript</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/mediapipe_logo.png" title="Media Pipe"/>
+                      <div class="flex items-center ml-[10px]">Media Pipe</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/docker_logo.png" title="Docker"/>
+                      <div class="flex items-center ml-[10px]">Docker</div>
+                    </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/js_logo.png" title="Javascript"/>
+                      <div class="flex items-center ml-[10px]">Javascript</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/django_logo.png" title="Django"/>
+                      <div class="flex items-center ml-[10px]">Django</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <!-- Software tools -->
+                </td>
+              </tr>
+              
+              <tr>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <!-- Programming langauges -->
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <div class="flex flex-row">
+                    <div class="flex flex-row">
+                      <img class="w-[50px] rounded-xl" src="./images/springboot_logo.png" title="Spring Boot"/>
+                      <div class="flex items-center ml-[10px]">Springboot</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="pt-3 pb-3">
+                  <!-- Software tools -->
+                </td>
+              </tr>
+              <!-- You can continue adding more rows as needed -->
+            </table>
+
+            <!-- <h3 class="section-heading mt-4 ml-4">Learning Arduino~</h3>
+            <ul class="list-disc">
+              <p class="ml-10 mt-1 list-item">Recently I have been tinkering with <a class="react-link" href="https://www.arduino.cc/" target="_blank">Arduinos</a> and I'm currently exploring some robotics.</p>
+            </ul>
+
+            <h3 class="section-heading mt-4 ml-4">Hobbies and Interests</h3>
+            <ul class="list-disc">
+              <p class="ml-10 mt-1 list-item">I'm a wilderness-loving, dirt-embracing, idea-nurturing enthusiast who thrives on exploring the unknown and seeing projects through to completion.</p>
+              <p class="ml-10 mt-1 list-item">Recently I have been tinkering with <a class="react-link" href="https://www.arduino.cc/" target="_blank">Arduinos</a> and I'm currently exploring some robotics.</p>
+              <p class="ml-10 mt-1 list-item">Music is a big part of my life, I listen to a variety of genres ranging from orchestral to indie to synthwave. I also play the guitar, piano, trombone and a bit of drums.</p>
+              <p class="ml-10 mt-1 list-item">For my career, I am interested in cybersecurity, algorithmic</p>
+            </ul> -->
             
           </div>
         </section>
@@ -101,11 +338,36 @@
           </div>  
 
           <div class="section-detail-wrapper">
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading">3D Interactive Engine</h3>
+            <div class="flex flex-row w-full">
+              <div class="flex-grow">
+                <h3 class="font-bold ml-3">Interact with 3D models using your hands</h3>
+              </div>
+              <div class="float-right">
+                <a href="#" target="_blank" class="font-bold waterloo-link">demo</a>
+              </div>
+            </div>
+            <div class="ml-3"><img src="./images/interactive_engine_thumbnail.png" class="w-full place-self-center rounded-lg"/></div>
+            
+            <h3 class="font-bold text-sm float-right">Python, OpenCV, MediaPipe</h3>
+
+            <ul class="list-disc ml-3 mt-5">
+              <li class="ml-5 mt-3">
+                <p>Implemented a 3D graphics engine using linear algebra and Python.</p>
+              </li>
+              <li class="ml-5 mt-3">
+                <p class="">Developed my own hand-gesture recognition algorithm to identify zoom and rotate gestures.</p>
+              </li>
+              <li class="ml-5 mt-3">
+                <p class="">Developed my own hand-gesture recognition algorithm to identify zoom and rotate gestures.</p>
+              </li>
+            </ul>
+            
+            <h3 class="section-heading mt-[100px]">Personal Website</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            
+            
+            <h3 class="section-heading mt-[100px]">Lorem Ipsum</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
           </div>
         </section>
@@ -126,11 +388,11 @@
           </div>  
 
           <div class="section-detail-wrapper">
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading mt-10">LinkedIn</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading mt-10">Lorem Ipsum</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
-            <h3 class="section-heading">Lorem Ipsum</h3>
+            <h3 class="section-heading mt-10">Lorem Ipsum</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
           </div>
         </section>

@@ -194,7 +194,7 @@ export default class Controls {
                         // end: "bottom top",
                         end: "bottom 300px",
                         scrub: 0.6,
-                        // markers: true,
+                        markers: true,
                         invalidateOnRefresh: true,
                         immediateRender: false,
                     }
@@ -214,18 +214,24 @@ export default class Controls {
 
                 this.firstMoveTimeline.to(
                     this.camera.perspectiveCamera.position, {
-                        x: 3.75,
-                        y: 1.75,
-                        z: 0,
+                        // x: 3.75,
+                        // y: 1.75,
+                        // z: 0,
+                        x: 3.70,
+                        y: 1.4,
+                        z: -0.3,
                     },
                     'camera-move1'
                 );
 
                 this.firstMoveTimeline.to(
                     this.controls.target, {
-                        x: 2.75,
+                        // x: 2.75,
+                        // y: 1.25,
+                        // z: -1.5,
+                        x: 2.8,
                         y: 1.25,
-                        z: -1.5,
+                        z: -1.6,
                     },
                     'camera-move1'
                 );
@@ -246,6 +252,36 @@ export default class Controls {
                 //         z: 0.2,
                 //     },
                 //     'map-move1'
+                // );
+
+                // this.firstMoveDetailTimeline = new GSAP.timeline({
+                //     scrollTrigger: {
+                //         trigger: ".first-move-detail",
+                //         start: "top top",
+                //         end: "bottom 300px",
+                //         scrub: 0.6,
+                //         markers: true,
+                //         invalidateOnRefresh: true,
+                //         imeediateRender: false,
+                //     }
+                // });
+
+                // this.firstMoveDetailTimeline.to(
+                //     this.camera.perspectiveCamera.position, {
+                //         x: 3.75,
+                //         y: 1.3,
+                //         z: -0.25,
+                //     },
+                //     'close_up_on_map'
+                // );
+
+                // this.firstMoveDetailTimeline.to(
+                //     this.controls.target, {
+                //         x: 2.8,
+                //         y: 1.25,
+                //         z: -1.6,
+                //     },
+                //     'close_up_on_map'
                 // );
 
                 // Second Move Section ---------------------------------------------------

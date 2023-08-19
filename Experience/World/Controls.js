@@ -194,7 +194,7 @@ export default class Controls {
                         // end: "bottom top",
                         end: "bottom 300px",
                         scrub: 0.6,
-                        markers: true,
+                        // markers: true,
                         invalidateOnRefresh: true,
                         immediateRender: false,
                     }

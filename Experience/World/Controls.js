@@ -31,11 +31,10 @@ export default class Controls {
         });
 
         this.site.children.forEach((child) => {
-             if (child.name === 'Image2_base') {
-                console.log("image2 texture found");
-                console.log(child.children[0]);
-                this.image1_texture = child.children[0];
-                this.image1_textureInitPosition = child.children[0].position;
+             if (child.name === 'Screen_1') {
+                console.log("Screen 1");
+                console.log(child);
+                this.image1_textureInitPosition = child.position;
              }
         });
         

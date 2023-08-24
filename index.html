@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="./images/web_icon_camping.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet">
-    <title>Vite App</title>
+    <title>Siwei's Campsite</title>
   </head>
 
   <body class="light-theme">
@@ -33,25 +33,19 @@
         </button>
         
       </div>
-
       
       <div class="page-wrapper" id="content">
 
         <section class="hero">
           <div class="hero-wrapper">
 
-            <div class="hero-main w-[37vw]">
-              <h1 class="hero-main-title">Siwei's Campsite</h1>
+            <div class="hero-main p-10 box-border rounded-[20px] absolute left-0 bottom-[125px]">
+              <h1 class="hero-main-title text-6xl">Siwei's Campsite</h1>
               <!-- <p class="hero-main-description">A cozy yet adventurous escape</p> -->
               <p class="hero-main-description break-words font-medium">
                 A wilderness-loving and idea-nurturing enthusiast who thrives on exploring the unknown.
               </p>
             </div>
-
-            <!-- <div class="hero-second">
-              <p class="hero-second-subheading">DAY 89</p>
-              <p class="hero-second-subheading">To Explore</p>
-            </div> -->
 
           </div>
         </section>
@@ -72,23 +66,24 @@
           </div>  
 
           <div class="section-detail-wrapper">
-            <div class="flex flex-col md:flex-row">
+            <div class="flex flex-col sm:flex-row min-[969px]:flex-col 2xl:flex-row">
+
               <div class="shrink-0 mt-[70px] mr-[10px] place-content-center">
-                  <img class="w-[210px] rounded-xl place-content-center" src="./images/Orange_Flower.png"/>
+                  <img class="w-62 sm:w-56 min-[969px]:w-62 2xl:w-62 rounded-xl place-content-center mx-auto" src="./images/Orange_Flower.png"/>
               </div>
 
               <div>
-                <h2 class="section-heading mt-[64px]">Hey there! I'm Siwei</h2>
-                <p class="p-2">I'm a computer science student at the <a class="waterloo-link" href="https://en.wikipedia.org/wiki/University_of_Waterloo" target="_blank">University of Waterloo</a>. </p>
+                <h2 class="section-heading p-2 mt-[64px]">Hey there! I'm Siwei</h2>
+                <p class="p-2 text-lg">I'm a computer science student at the <a class="waterloo-link" href="https://en.wikipedia.org/wiki/University_of_Waterloo" target="_blank">University of Waterloo</a>. </p>
                 
-                <p class="p-2">I tackle challenging problems from a <a class="creative-link" href="#">creative</a> point of view, striving to find the most optimized and elegant solution.</p>
+                <p class="p-2 text-lg">I tackle challenging problems from a <a class="creative-link" href="#">creative</a> point of view, striving to find the most optimized and elegant solution.</p>
                 <!-- <p class="p-4">In my book, challenging problems are just like piñatas – smack 'em with the right idea, and solutions come tumbling out in a shower of confetti!</p> -->
               </div>
             </div>
             
-            <h3 class="section-heading mt-[100px]">More About Me</h3>
+            <h3 class="text-xl font-bold leading-10 mt-[100px]">More About Me</h3>
 
-            <p>
+            <p class="text-lg">
               In my spare time, I like to listen to and play music, mainly the guitar and piano.
               I also enjoy cooking and racing against the clock to see how fast I can make dishes.
               Career-wise, I am interested in technical & algorithmic topics. Things like robotics, 
@@ -96,32 +91,11 @@
             </p>
             
             <div class="mt-[40px] p-6 rounded-lg bg-[#f4be82]">
-              <p class="text-[#111518ff] font-medium">
+              <p class="text-[#111518ff] font-medium text-lg">
                 I like taking risks and getting my hands dirty. Being thrown into the unknown and 
                 then finding a way out and optimizing my approach each time is absolutely rewarding
               </p>
             </div>
-            <!-- Perhaps a more detailed description -->
-            <!-- <ul class="list-disc">
-              <li class="ml-10 mt-1 list-item">
-                <p>
-                  Music is a big part of my life. I enjoy both listening as well as playing. 
-                  Since I started university, I've been teaching myself the guitar (as it's the most portable :P).
-                </p>
-              </li>
-              <li class="ml-10 mt-1 list-item">
-                <p>
-                  I have also developed an interest in cooking. It started as an alternative to the expensive cafeteria food, 
-                  but now I'm beginning to enjoy cooking as a way to de-stress.
-                </p>
-              </li>
-              <li class="ml-10 mt-1 list-item">
-                <p>
-                  I have also developed an interest in cooking. It started as an alternative to the expensive cafeteria food, 
-                  but now I'm beginning to enjoy cooking as a way to de-stress.
-                </p>
-              </li>
-            </ul> -->
             
             <hr class="mt-[100px]"/>
             
@@ -136,181 +110,171 @@
                 </p>
               </li>
               <li class="ml-10 mt-1 list-item">
-                <p>Implemented front-end Rest API endpoints for retrieving and sending data to be stored in database.</p>
+                <p>Implemented front-end REST API endpoints for retrieving and sending data to be stored in database.</p>
               </li>
             </ul>
             
+
+            <!-- Skills table -->
             <h3 class="section-heading mt-[100px]">Skills</h3>
+            
+            <div class="w-full min-[1687px]:flex min-[1687px]:flex-row min-[1687px]:justify-between">
+              <div class="inline-block align-top box-border p-2">
+                <table class="table-fixed">
+                  <tr height="24px">
+                    <th class="text-left" width="100%">Languages</th>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/cpp_logo.png" title="C++"/>
+                        <div class="flex items-center ml-[10px]">C++</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl bg-white" src="./images/java_logo.png" title="Java"/>
+                        <div class="flex items-center ml-[10px]">Java</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/python_logo.png" title="Python"/>
+                        <div class="flex items-center ml-[10px]">Python</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/ts_logo.png" title="Typescript"/>
+                        <div class="flex items-center ml-[10px]">Typescript</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/js_logo.png" title="Javascript"/>
+                        <div class="flex items-center ml-[10px]">Javascript</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr></tr>
+                </table>
+              </div>
 
-            <!-- <table class="w-full">
-              <tr>
-                <th class="text-left">Languages</th>
-                <th class="text-left">Frameworks/Libraries</th>
-                <th class="text-left">Tools</th>
-              </tr>
-              <tr>
-                <td class="flex flex-row align-middle">
-                  <img class="h-[50px] rounded-xl" src="./images/cpp_logo.png" title="C++"/>
-                  <div class="flex items-center ml-[10px]">C++</div>
-                </td>
-                
-                <td class="">
-                  
-                </td>
-                
-                <td class="">
-                  
-                </td>
-              </tr>
+              <div class="inline-block align-top box-border p-2">
+                <table class="table-fixed">
+                  <tr>
+                    <th class="text-left" width="100%">Frameworks/Libraries</th>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/react_logo.png" title="React"/>
+                        <div class="flex items-center ml-[10px]">React</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl bg-white" src="./images/threejs_logo.png" title="Three JS"/>
+                        <div class="flex items-center ml-[10px]">Three JS</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/opencv_logo.png" title="OpenCV"/>
+                        <div class="flex items-center ml-[10px]">OpenCV</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/mediapipe_logo.png" title="Media Pipe"/>
+                        <div class="flex items-center ml-[10px]">Media Pipe</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/django_logo.png" title="Django"/>
+                        <div class="flex items-center ml-[10px]">Django</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/springboot_logo.png" title="Spring Boot"/>
+                        <div class="flex items-center ml-[10px]">Springboot</div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
 
-            </table> -->
+              <div class="inline-block align-top box-border p-2">
+                <table class="table-fixed max-w-[160px]">
+                  <tr height="24px">
+                    <th class="text-left" width="100%">Tools</th>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/git_logo.png" title="Git"/>
+                        <div class="flex items-center ml-[10px]">Git</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/blender_logo.png" title="Blender"/>
+                        <div class="flex items-center ml-[10px]">Blender</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/azure_logo.png" title="Microsoft Azure"/>
+                        <div class="flex items-center ml-[10px]">Microsoft Azure</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/docker_logo.png" title="Docker"/>
+                        <div class="flex items-center ml-[10px]">Docker</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr height="72px">
+                    <td class="pt-3 pb-3">
+                      <div class="flex flex-row">
+                        <img class="w-12 rounded-xl" src="./images/figma_logo.png" title="Figma"/>
+                        <div class="flex items-center ml-[10px]">Figma</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr></tr>
+                </table>
+              </div>
+            </div>
 
-            <table class="w-full">
-              <tr>
-                <th class="text-left" width="35%">Languages</th>
-                <th class="text-left" width="35%">Frameworks/Libraries</th>
-                <th class="text-left" width="20%">Tools</th>
-              </tr>
-              <tr>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <img class="h-[50px] rounded-xl" src="./images/cpp_logo.png" title="C++"/>
-                    <div class="flex items-center ml-[10px]">C++</div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <img class="w-[50px] rounded-xl" src="./images/react_logo.png" title="React"/>
-                    <div class="flex items-center ml-[10px]">React</div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <img class="w-[50px] rounded-xl" src="./images/git_logo.png" title="Git"/>
-                    <div class="flex items-center ml-[10px]">Git</div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <img class="w-[50px] rounded-xl bg-white" src="./images/java_logo.png" title="Java"/>
-                    <div class="flex items-center ml-[10px]">Java</div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <img class="w-[50px] rounded-xl bg-white" src="./images/threejs_logo.png" title="Three JS"/>
-                    <div class="flex items-center ml-[10px]">Three JS</div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <img class="w-[50px] rounded-xl" src="./images/blender_logo.png" title="Blender"/>
-                    <div class="flex items-center ml-[10px]">Blender</div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/python_logo.png" title="Python"/>
-                      <div class="flex items-center ml-[10px]">Python</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/opencv_logo.png" title="OpenCV"/>
-                      <div class="flex items-center ml-[10px]">OpenCV</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <img class="w-[50px] rounded-xl" src="./images/azure_logo.png" title="Microsoft Azure"/>
-                    <div class="flex items-center ml-[10px]">Microsoft Azure</div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/ts_logo.png" title="Typescript"/>
-                      <div class="flex items-center ml-[10px]">Typescript</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/mediapipe_logo.png" title="Media Pipe"/>
-                      <div class="flex items-center ml-[10px]">Media Pipe</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/docker_logo.png" title="Docker"/>
-                      <div class="flex items-center ml-[10px]">Docker</div>
-                    </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/js_logo.png" title="Javascript"/>
-                      <div class="flex items-center ml-[10px]">Javascript</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/django_logo.png" title="Django"/>
-                      <div class="flex items-center ml-[10px]">Django</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <!-- Software tools -->
-                </td>
-              </tr>
-              
-              <tr>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <!-- Programming langauges -->
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <div class="flex flex-row">
-                    <div class="flex flex-row">
-                      <img class="w-[50px] rounded-xl" src="./images/springboot_logo.png" title="Spring Boot"/>
-                      <div class="flex items-center ml-[10px]">Springboot</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="pt-3 pb-3">
-                  <!-- Software tools -->
-                </td>
-              </tr>
-              <!-- You can continue adding more rows as needed -->
-            </table>
-
-            <!-- <h3 class="section-heading mt-4 ml-4">Learning Arduino~</h3>
-            <ul class="list-disc">
-              <p class="ml-10 mt-1 list-item">Recently I have been tinkering with <a class="react-link" href="https://www.arduino.cc/" target="_blank">Arduinos</a> and I'm currently exploring some robotics.</p>
-            </ul>
-
+            <!-- 
             <h3 class="section-heading mt-4 ml-4">Hobbies and Interests</h3>
             <ul class="list-disc">
               <p class="ml-10 mt-1 list-item">I'm a wilderness-loving, dirt-embracing, idea-nurturing enthusiast who thrives on exploring the unknown and seeing projects through to completion.</p>
@@ -338,74 +302,103 @@
           </div>  
 
           <div class="section-detail-wrapper">
-            <h3 class="text-[2vw] font-bold leading-[1.8]">3D Interactive Engine</h3>
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8]">3D Interactive Engine</h3>
 
             <div class="flex flex-row w-full">
               <div class="flex-grow">
-                <h3 class="text-[0.85vw]"> <div class="p-1 box-border inline-block bg-yellow-600 rounded-xl">Python</div> | OpenCV, MediaPipe, PyGame</h3>
+                <h3 class="text-xs"> <div class="p-1 box-border inline-block bg-yellow-600 rounded-xl">Python</div> | OpenCV, MediaPipe, PyGame</h3>
               </div>
 
               <div class="float-right flex items-center">
                 <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
-                <h3 class="text-[0.85vw]">Jan 2023</h3>
+                <h3 class="text-xs">Jan 2023</h3>
               </div>
             </div>
 
             <!-- Brief description -->
             <div class="flex flex-row w-full m-4">
-              <div class="flex-grow w-[70px]"><img src="./images/quotation_mark.png" class="w-[140px]"/></div>
-              <div class="m-3"><p class="text-[0.85vw]">Interact with 3D models using your hands and your webcam. Grab, pan and rotate with hand gestures for an immersive experience.</p></div>
+              <div class="w-12 sm:w-20"><img href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20"/></div>
+              <div class="m-3"><p class="text-sm">Interact with 3D models using your hands and your webcam. Grab, pan and rotate with hand gestures for an immersive experience.</p></div>
             </div>
              
-            <div class=""><img src="./images/interactive_engine_thumbnail.png" class="w-full place-self-center rounded-[20px]"/></div>
+            <div class="">
+              <a href="https://github.com/Happyseaweed/3D-Interactive-Engine" target="_blank"><img src="./images/interactive_engine_thumbnail.png" class="w-full place-self-center rounded-[20px]"/></a>
+            </div>
             
             
             <!-- Project showcase # 2 --------------------------------------------------------------------------------------------------------------------------------- -->
-            <h3 class="text-[2vw] font-bold leading-[1.8] mt-[140px]">Personal Website</h3>
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8] mt-[140px]">Personal Website</h3>
             
             <div class="flex flex-row w-full">
               <div class="flex-grow">
-                <h3 class="text-[0.85vw]"><div class="p-1 box-border inline-block bg-purple-600 rounded-xl">Three.JS</div> | Tailwindcss, HTML/CSS, Javascript</h3>
+                <h3 class="text-xs"><div class="p-1 box-border inline-block bg-purple-600 rounded-xl">Three.JS</div> | Tailwindcss, HTML/CSS, Javascript</h3>
               </div>
 
               <div class="float-right flex items-center">
                 <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
-                <h3 class="text-[0.85vw]">Aug 2023</h3>
+                <h3 class="text-xs">Aug 2023</h3>
               </div>
             </div>
 
             <!-- Brief description -->
             <div class="flex flex-row w-full m-4">
-              <div class="flex-grow w-[70px]"><img src="./images/quotation_mark.png" class="w-[140px]"/></div>
-              <div class="m-3"><p class="text-[0.85vw]">Siwei's campground, a cozy yet adventurous escape. Built with Blender and Three.JS.</p></div>
+              <div class="w-12 sm:w-20"><img href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20"/></div>
+              <div class="m-3"><p class="text-sm">Siwei's campground, a cozy yet adventurous escape. Built with Blender and Three.JS.</p></div>
             </div>
              
-            <div class=""><img src="./images/personal_website_thumbnail.png" class="w-full place-self-center rounded-[20px]"/></div>
+            <div class="">
+              <a href="#"><img src="./images/personal_website_thumbnail.png" class="w-full place-self-center rounded-[20px]"/></a>
+            </div>
             
             <!-- Project showcase # 3 --------------------------------------------------------------------------------------------------------------------------------- -->
-            <h3 class="text-[2vw] font-bold leading-[1.8] mt-[140px]">N-body Simulation</h3>
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8] mt-[140px]">N-body Simulation</h3>
             
             <div class="flex flex-row w-full">
               <div class="flex-grow">
-                <h3 class="text-[0.85vw]"><div class="p-1 box-border inline-block bg-blue-600 rounded-xl">C++</div> | SFML</h3>
+                <h3 class="text-xs"><div class="p-1 box-border inline-block bg-blue-600 rounded-xl">C++</div> | SFML</h3>
               </div>
 
               <div class="float-right flex items-center">
                 <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
-                <h3 class="text-[0.85vw]">May 2023</h3>
+                <h3 class="text-xs">May 2023</h3>
               </div>
             </div>
 
             <!-- Brief description -->
             <div class="flex flex-row w-full m-4">
-              <div class="flex-grow w-[70px]"><img src="./images/quotation_mark.png" class="w-[140px]"/></div>
-              <div class="m-3"><p class="text-[0.85vw]">Dance of the stars under the laws of universal gravity. Built with the Simple & Fast Multimedia Library</p></div>
+              <div class="w-12 sm:w-20"><img href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20"/></div>
+              <div class="m-3"><p class="text-sm">Dance of the stars under the laws of universal gravity. Built with the Simple & Fast Multimedia Library (SFML)</p></div>
             </div>
              
-            <div class=""><img src="./images/nbody_thumbnail.png" class="w-full place-self-center rounded-[20px]"/></div>
+            <div class="">
+              <a href="https://github.com/Happyseaweed/planetEngine" target="_blank"><img src="./images/nbody_thumbnail.png" class="w-full place-self-center rounded-[20px]"/></a>
+            </div>
           
-          
+            <!-- Currently Working on ---------------------------------------------------------------------------------------------------------------------------------- -->
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8] mt-[140px]">Inverse Kinematic Robotic Arm</h3>
+            
+            <div class="flex flex-row w-full">
+              <div class="flex-grow">
+                <h3 class="text-xs"><div class="p-1 box-border inline-block bg-blue-600 rounded-xl">C++</div> | Arduino</h3>
+              </div>
+
+              <div class="float-right flex items-center">
+                <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
+                <h3 class="text-xs">In Progress</h3>
+              </div>
+            </div>
+
+            <!-- Brief description -->
+            <div class="flex flex-row w-full m-4">
+              <div class="w-12 sm:w-20"><img href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20"/></div>
+              <div class="m-3"><p class="text-sm">A simple robotic arm with the ability to do inverse kinematics.</p></div>
+            </div>
+             
+            <div class=""><img src="./images/work_in_progress.jpg" class="w-full place-self-center rounded-[20px]"/></div>
           </div>
+
+
+
         </section>
         
         <div class="third-move section-margin"></div>
@@ -414,7 +407,7 @@
             
           <div class="section-intro-wrapper">
             <h1 class="section-title">
-              <span class="section-title-text">Connect With Me</span>
+              <span class="section-title-text">Contact Me</span>
               <div class="section-title-decoration styleOne"></div>
               <div class="section-title-decoration styleTwo"></div>
               <div class="section-title-decoration styleThree"></div>
@@ -424,17 +417,68 @@
           </div>  
 
           <div class="section-detail-wrapper">
-            <h3 class="section-heading mt-10">LinkedIn</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
-            <h3 class="section-heading mt-10">Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
-            <h3 class="section-heading mt-10">Lorem Ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus atque iusto cumque blanditiis veritatis dolor dolorum dicta tenetur aliquam esse quo, assumenda harum, doloremque excepturi commodi ipsa deleniti cum fuga?</p>
+            <!-- Contact form -->
+            <div class="box-border p-3 bg-gray-200 rounded-xl">
+              <form action="https://formsubmit.co/34a1a9b7ce4e829d07b83ba56ee9247f" method="POST" class="flex flex-col justify-between">
+                
+                <div class="flex flex-col box-border p-2 rounded-xl bg-white">
+                  <label for="fname" class="text-gray-700">Name:</label>
+                  <textarea name="name" class="text-black resize-none border-none outline-none" maxlength="30" spellcheck="false" rows="1" required></textarea>
+                </div>
+
+                <div class="flex flex-col box-border p-2 rounded-xl bg-white mt-[20px]">
+                  <label for="email" class="text-gray-700">Email:</label>
+                  <textarea name="email" type="email" class="text-black resize-none border-none outline-none" maxlength="40" spellcheck="false" rows="1"></textarea>
+                </div>
+
+                <div class="flex flex-col box-border p-2 rounded-xl bg-white mt-[20px]">
+                  <label for="msg" class="text-gray-700">Message:</label>
+                  <textarea name="message" class="text-black resize-none border-none outline-none" spellcheck="false" rows="10"></textarea>
+                </div>
+
+                <button type="submit" class="w-full box-border p-2 bg-[#111518ff] rounded-xl mt-[20px] hover:bg-white hover:text-[#111518ff] duration-200">Submit</button>
+            
+              </form>
+            </div>
+
+
+
+            <p class="mt-[50px] mb-[50px]">Thanks for stopping by! If you would like to get in touch with me, feel free to connect with me through any of the following.</p>
+            
+            <div class="w-full flex flex-col min-[1700px]:flex-row justify-between">
+              <a 
+                href="https://www.linkedin.com/in/siwei-du-6235a31b1/" 
+                target="_blank" 
+                class="w-full min-[1700px]:w-44 h-20 mt-[40px] flex flex-row box-border p-3 bg-blue-500 rounded-xl duration-200 hover:bg-blue-700 "
+              >
+                <div class="flex items-center"><img class="w-14 resize-none" src="./images/linkedin_logo.png" title="LinkedIn"/></div>
+                <div class="flex items-center ml-[20px]">LinkedIn</div>
+              </a>
+
+              <a 
+                href="mailto: contact.siwei@gmail.com" 
+                target="_blank" 
+                class="w-full min-[1700px]:w-44 h-20 mt-[40px] flex flex-row box-border p-3 bg-red-500 rounded-xl duration-200 hover:bg-red-700 "
+              >
+                <div class="flex items-center"><img class="w-14 resize-none" src="./images/gmail_logo.png" title="Gmail"/></div>
+                <div class="flex items-center ml-[20px]">Email</div>
+              </a>
+
+              <a 
+                href="https://github.com/Happyseaweed" 
+                target="_blank" 
+                class="w-full min-[1700px]:w-44 h-20 mt-[40px] flex flex-row box-border p-3 bg-white rounded-xl duration-200 hover:bg-gray-400 "
+              >
+                <div class="flex items-center"><img class="w-14 rounded-xl" src="./images/github_logo.png" title="Github"/></div>
+                <div class="flex items-center ml-[20px] text-black">Github</div>
+              </a>
+            </div>
           </div>
         </section>
         
         <div class="fourth-move section-margin"></div>
         <div class="section-margin"></div>
+        <div class="w-full flex justify-center">Designed and Built by Siwei Du</div>
 
       </div>
     </div>

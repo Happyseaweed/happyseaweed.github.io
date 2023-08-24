@@ -240,7 +240,7 @@ html, body {
 }
 
 .section {
-  width: 40%;
+  width: 42%;
   padding: 800px 4%;
   margin: 0;
   background-color: var(--color-section-background);
@@ -279,7 +279,9 @@ html, body {
 
 .section-detail-wrapper {
   position: relative;
+  margin: 0 auto;
   padding: 10% 0%;
+  max-width: 700px;
   color: var(--color-text);
 }
 
@@ -357,24 +359,18 @@ html, body {
 .hero-wrapper {
   position: relative;
   height: 100%;
-  width: calc(100% - 60px);
+  width: 80%;
   margin: 0 auto;
   max-width: 1700px;
 }
 
 .hero-main {
   position: absolute;
-  bottom: 125px;
-  left: 0;
+  max-width: 680px;
 
   background-color: var(--color-section-background);
-  backdrop-filter: blur(8px);
-
-  padding: 40px 40px;
-  box-sizing: border-box;
 
   box-shadow: 20px 20px #181818;
-  border-radius: 20px;
 }
 
 .hero-second {
@@ -391,13 +387,12 @@ html, body {
 }
 
 .hero-main-title {
-  font-size: 64px;
   color: var(--color-section-title);
   /* color: #ffffff; */
 }
 
 .hero-main-description {
-  font-size: 20px;
+  /* font-size: 20px; */
   color: var(--color-section-title);
   /* color: #ffffff; */
 

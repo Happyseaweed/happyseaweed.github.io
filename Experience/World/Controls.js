@@ -413,10 +413,142 @@ export default class Controls {
             () => {
                 console.log("Fired mobile");
                 GSAP.to(this.camera.perspectiveCamera.position, {
-                    x: 35,
-                    y: 18,
-                    z: 18,
+                    x: 21,
+                    y: 9,
+                    z: 9,
                 });
+
+                this.firstMoveTimeline = new GSAP.timeline({
+                    scrollTrigger:{
+                        trigger: ".first-move",
+                        // start: "top 400px",
+                        start: "top top",
+                        // end: "bottom top",
+                        end: "bottom 300px",
+                        scrub: 0.6,
+                        // markers: true,
+                        invalidateOnRefresh: true,
+                        immediateRender: false,
+                    }
+                });
+
+                this.firstMoveTimeline.to(
+                    this.camera.perspectiveCamera.position, {
+                        x: 3.70,
+                        y: 1.4,
+                        z: -0.3,
+                    },
+                    'camera-move1'
+                );
+
+                this.firstMoveTimeline.to(
+                    this.controls.target, {
+                        x: 3.2,
+                        y: 1.25,
+                        z: -1.6,
+                    },
+                    'camera-move1'
+                );
+
+                this.secondMoveTimeline = new GSAP.timeline({
+                    scrollTrigger:{
+                        trigger: ".second-move",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 0.6,
+                        // markers: true,
+                        invalidateOnRefresh: true,
+                        immediateRender: false,
+                    }
+                });
+
+                this.secondMoveTimeline.to(
+                    this.camera.perspectiveCamera.position, {
+                        x: -1.2,
+                        y: 1.5,
+                        z: -2.25,
+                    },
+                    'camera-move2'
+                );
+
+                this.secondMoveTimeline.to(
+                    this.controls.target, {
+                        x: -2.1,
+                        y: 1.1,
+                        z: -1,
+                    },
+                    'camera-move2'
+                );
+
+                this.thirdMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".third-move",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 0.6,
+                        // markers: true,
+                        invalidateOnRefresh: true,
+                        immediateRender: false,
+                    }
+                });
+
+                this.thirdMoveTimeline.to(
+                    this.camera.perspectiveCamera.position, {
+                        x: 0.5,
+                        y: 1.75,
+                        z: 2,
+                    },
+                    'camera-move3'
+                );
+
+                this.thirdMoveTimeline.to(
+                    this.controls.target, {
+                        x: -2.1, 
+                        y: 1.5,
+                        z: 1.25,
+                    },
+                    'camera-move3'
+                );
+
+                // Fourth Move timeline to contact / connect
+                this.fourthMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".fourth-move",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 0.6,
+                        // markers: true,
+                        invalidateOnRefresh: true,
+                        immediateRender: false,
+                    }
+                });
+
+                this.fourthMoveTimeline.to(
+                    this.map.position, {
+                        x: this.mapInitPosition.x,
+                        y: this.mapInitPosition.y+0.05,
+                        z: this.mapInitPosition.z,
+                    },
+                    'camera-move4'
+                );
+
+                this.fourthMoveTimeline.to(
+                    this.camera.perspectiveCamera.position, {
+                        x: 21,
+                        y: 9,
+                        z: 9,
+                    },
+                    'camera-move4'
+                );
+
+                this.fourthMoveTimeline.to(
+                    this.controls.target, {
+                        x: 0, 
+                        y: 1,
+                        z: -1,
+                    },
+                    'camera-move4'
+                );
 
             }
         );

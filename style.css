@@ -168,6 +168,20 @@ html, body {
   transform: translateX(44px);
 }
 
+.collapsible-header {
+  cursor: pointer;
+}
+
+.collapsible-header:hover {
+  color: var(--color-text-dark);
+  box-shadow: inset 1000px 0 0 0 var(--color-section-title);
+  transition: 0.5s;
+}
+
+.collapsible-content {
+  display: block;
+}
+
 /* Formatting ----------------------------------------- */
 
 .profile-image {
@@ -187,7 +201,7 @@ html, body {
 
 .waterloo-link:hover {
   color: var(--color-text-dark);
-  box-shadow: inset 220px 0 0 0 #ffd64e;;
+  box-shadow: inset 300px 0 0 0 #ffd64e;
 }
 
 .creative-link {
@@ -202,6 +216,20 @@ html, body {
 .creative-link:hover {
   color: var(--color-text-dark);
   box-shadow: inset 220px 0 0 0 #b5c036;
+}
+
+.music-link {
+  box-shadow: inset 0 -5px 0 0 #FAF4E5;
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.music-link:hover {
+  color: var(--color-text-dark);
+  box-shadow: inset 300px 0 0 0 #FAF4E5;
 }
 
 .react-link {
@@ -230,6 +258,13 @@ html, body {
 .bdo-link:hover {
   color: var(--color-text-light);
   box-shadow: inset 220px 0 0 0 #ef243a;
+}
+
+.end-msg {
+  background-color: var(--color-section-title);
+  box-shadow: 4px 4px var(--color-section-background);
+  padding: 4px;
+  border-radius: 12px;
 }
 
 .section-margin {
@@ -409,4 +444,57 @@ html, body {
   .section{
     width: 100%;
   }
+}
+
+/* styles.css */
+#skillsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Decreased the minmax value */
+  gap: 10px; /* Decreased the gap value */
+  justify-items: center;
+}
+
+.skill-card {
+  width: 100px; /* Reduced the width */
+  height: auto;
+  padding: 10px; /* Reduced the padding */
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Reduced the border radius */
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-card img {
+  max-width: 100%; /* Ensure the image doesn't exceed the card width */
+  max-height: 50px; /* Reduced the max-height */
+  object-fit: contain; /* Maintain the aspect ratio without cropping */
+  border-radius: 5px; /* Reduced the border radius */
+  margin-bottom: 5px; /* Reduced the margin */
+}
+
+.skill-card .skill-name {
+  font-size: 12px; /* Reduced the font size */
+  font-weight: bold;
+}
+
+.skill-card:hover {
+  transform: scale(1.1) translateY(-5px); /* Add a slight bounce effect */
+  z-index: 1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  border-color: #ffd64e;
+  filter: saturate(100%) brightness(120%) contrast(120%);
+  transition: transform 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55), /* Add a custom cubic-bezier for bounce effect */
+              box-shadow 0.15s ease,
+              border-color 0.15s ease,
+              z-index 0s 0.15s;
+}
+
+.skill-card:not(:hover) {
+  transform: scale(0.9); /* Shrink other cards slightly */
+  opacity: 0.85; /* Reduce opacity for fade effect */
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), /* Add the same cubic-bezier for consistency */
+              opacity 0.15s ease; /* Adjust opacity transition */
 }

@@ -24,6 +24,7 @@ export default class World {
             this.floor = new Floor();
             console.log(this.campsite);
             console.log("Created World");
+            this.experience.renderer.update();
         });
 
         this.theme.on("switch", (theme) => {

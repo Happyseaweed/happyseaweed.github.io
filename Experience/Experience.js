@@ -46,9 +46,17 @@ export default class Experience {
         this.world.resize();
     }
 
+    onScrollUpdate() {
+        window.addEventListener('wheel', (e) => {
+            this.camera.update();
+            this.renderer.update();
+            this.world.update();
+        });
+    }
+
     update() {
         this.camera.update();
-        this.renderer.update();
+        // this.renderer.update();
         this.world.update();
     }
 }

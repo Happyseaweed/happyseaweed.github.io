@@ -35,53 +35,60 @@ export default class Environment {
     }
 
     switchTheme(theme) {
+        // Note: Can use GSAP.to(), but we can't "spam" renderer.update() for a specified amount of time.
+        //       Or can we?????? Anyways, alternative is just to change the values directly
         if (theme === "dark"){
             console.log("dark theme activated");
-            GSAP.to(this.sunLight.color, {
-                r: 15/255,
-                g: 15/255,
-                b: 15/255,
-            });
-            GSAP.to(this.ambientLight.color, {
-                r: 0.2,
-                g: 0.2,
-                b: 0.2,
-            });
-            GSAP.to(this.experience.world.campsite.fireLight, {
-                distance: 10,
-            });
-            // GSAP.to(this.experience.world.campsite.tentLight, {
-            //     intensity: 0.15,
+            this.sunLight.color.setRGB(15/255, 15/255, 15/255);
+            this.ambientLight.color.setRGB(0.2, 0.2, 0.2);
+            this.experience.world.campsite.fireLight.distance = 10;
+            // GSAP.to(this.sunLight.color, {
+            //     r: 15/255,
+            //     g: 15/255,
+            //     b: 15/255,
             // });
-            GSAP.to(this.experience.world.campsite.mapLight, {
-                intensity: 3,
-            });
-
+            // GSAP.to(this.ambientLight.color, {
+            //     r: 0.2,
+            //     g: 0.2,
+            //     b: 0.2,
+            // });
+            // GSAP.to(this.experience.world.campsite.fireLight, {
+            //     distance: 10,
+            // });
+            // GSAP.to(this.experience.world.campsite.mapLight, {
+            //     intensity: 3,
+            // });
         } else {
             console.log("light theme activated");
-            GSAP.to(this.sunLight.color, {
-                r: 255 / 255,
-                g: 247 / 255,
-                b: 209 / 255,
-            });
-            GSAP.to(this.sunLight, {
-                intensity: 0.70,
-            });
-            GSAP.to(this.ambientLight.color, {
-                r: 1,
-                g: 1,
-                b: 1,
-            });
-            GSAP.to(this.experience.world.campsite.fireLight, {
-                distance: 4,
-            });
-            GSAP.to(this.experience.world.campsite.tentLight, {
-                intensity: 0.25,
-            });
-            GSAP.to(this.experience.world.campsite.mapLight, {
-                intensity: 0,
-            });
+            this.sunLight.color.setRGB(255 / 255, 247 / 255, 209 / 255);
+            this.sunLight.intensity = 0.70;
+            this.ambientLight.color.setRGB(1, 1, 1);
+            this.experience.world.campsite.fireLight.distance = 4;
+            this.experience.world.campsite.tentLight.intensity = 0.25;
+            // GSAP.to(this.sunLight.color, {
+            //     r: 255 / 255,
+            //     g: 247 / 255,
+            //     b: 209 / 255,
+            // });
+            // GSAP.to(this.sunLight, {
+            //     intensity: 0.70,
+            // });
+            // GSAP.to(this.ambientLight.color, {
+            //     r: 1,
+            //     g: 1,
+            //     b: 1,
+            // });
+            // GSAP.to(this.experience.world.campsite.fireLight, {
+            //     distance: 4,
+            // });
+            // GSAP.to(this.experience.world.campsite.tentLight, {
+            //     intensity: 0.25,
+            // });
+            // GSAP.to(this.experience.world.campsite.mapLight, {
+            //     intensity: 0,
+            // });
         }
+        this.experience.renderer.update();
     }
 
     resize() {

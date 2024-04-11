@@ -15,40 +15,19 @@ export default class Controls {
         this.sizes = this.experience.sizes;
         this.controls = this.experience.camera.controls;
         this.site = this.experience.world.campsite.actualSite;
-        this.site.children.forEach((child) => {
-            if (child.name === 'fireLight') {
-                console.log(child);
-                this.fireLight = child;
-            }
-        });
 
-        this.site.children.forEach((child) => {
-            if (child.name === 'Map') {
-                console.log(child);
-                this.map = child;
-                this.mapInitPosition = child.position;
-            }
-        });
-
-        this.site.children.forEach((child) => {
-             if (child.name === 'Screen_1') {
-                console.log("Screen 1");
-                console.log(child);
-                this.image1_textureInitPosition = child.position;
-             }
-        });
-        
+        // this.site.children.forEach((child) => {
+        //     if (child.name === 'fireLight') {
+        //         console.log(child);
+        //         this.fireLight = child;
+        //     }
+        // });
 
         this.progress = 0;
         this.dummyVector = new THREE.Vector3(0, 0, 0);
         this.firstSectionOrbitCenter = new THREE.Vector3(3, 1.6, -1.3);
 
         this.progress = 0;
-        this.lerp = {
-            current: 0,
-            target: 0,
-            ease: 0.1,
-        };
 
         GSAP.registerPlugin(ScrollTrigger);
 
@@ -59,7 +38,7 @@ export default class Controls {
 
         // Stats stuff
         var stats = new Stats();
-        stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+        stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
         document.body.appendChild( stats.dom );
 
         function animate() {
@@ -159,7 +138,7 @@ export default class Controls {
 
     setPath() {
         // Initial camera position to campfire position.
-        this.curve = new THREE.CatmullRomCurve3( [
+        this.curve = new THREE.CatmullRomCurve3(    [
             new THREE.Vector3( 10, 5, 5 ),
             new THREE.Vector3( 5, 2.5, 2.5 ),
             // new THREE.Vector3( 5, 3, -3 )
@@ -296,25 +275,6 @@ export default class Controls {
                     }
                 });
 
-                // this.secondMoveTimeline.to(
-                //     this.map.position, {
-                //         x: this.mapInitPosition.x,
-                //         y: this.mapInitPosition.y+0.05,
-                //         z: this.mapInitPosition.z,
-                //     },
-                //     'map-move2',             
-                // );
-
-                // this.secondMoveTimeline.to(
-                //     this.map.rotation, {
-                //         x: -1,
-                //         y: 0,
-                //         z: 0,
-                //     },
-                //     'map-move2',         
-                // );
-                
-
                 this.secondMoveTimeline.to(
                     this.camera.perspectiveCamera.position, {
                         x: -1.2,
@@ -376,15 +336,6 @@ export default class Controls {
                         immediateRender: false,
                     }
                 });
-
-                this.fourthMoveTimeline.to(
-                    this.map.position, {
-                        x: this.mapInitPosition.x,
-                        y: this.mapInitPosition.y+0.05,
-                        z: this.mapInitPosition.z,
-                    },
-                    'camera-move4'
-                );
 
                 this.fourthMoveTimeline.to(
                     this.camera.perspectiveCamera.position, {
@@ -522,15 +473,6 @@ export default class Controls {
                         immediateRender: false,
                     }
                 });
-
-                this.fourthMoveTimeline.to(
-                    this.map.position, {
-                        x: this.mapInitPosition.x,
-                        y: this.mapInitPosition.y+0.05,
-                        z: this.mapInitPosition.z,
-                    },
-                    'camera-move4'
-                );
 
                 this.fourthMoveTimeline.to(
                     this.camera.perspectiveCamera.position, {

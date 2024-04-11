@@ -19,7 +19,8 @@ export default class Renderer{
     setRenderer() {
         this.renderer = new THREE.WebGL1Renderer({
             canvas: this.canvas,
-            antialias: true,
+            // antialias: true,
+            antialias: false,
         });
 
         // this.renderer.useLegacyLights = true;
@@ -31,6 +32,7 @@ export default class Renderer{
         this.renderer.setSize(this.sizes.width, this.sizes.height);
         this.renderer.setPixelRatio(this.sizes.pixelRatio);
          
+        this.renderer.render(this.scene, this.camera.perspectiveCamera);
     }
 
     resize() {
@@ -38,8 +40,14 @@ export default class Renderer{
         this.renderer.setPixelRatio(this.sizes.pixelRatio);
     }
 
+    onMouseScrollRender(){
+        window.addEventListener('wheel', (e) => {
+            this.renderer.render(this.scene, this.camera.perspectiveCamera);
+        });
+    }
+
     update() {
         this.renderer.render(this.scene, this.camera.perspectiveCamera);
-         
+        console.log("Number of Triangles :", this.renderer.info.render.triangles);
     }
 }

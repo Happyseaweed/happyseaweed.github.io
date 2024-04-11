@@ -17,16 +17,10 @@ export default class Campsite {
 
         this.env = this.experience.world.environment;
 
-        this.lerp = {
-            current: 0,
-            target: 0,
-            ease: 0.1,
-        };
-
         this.setModel();
         this.setImages();
         // this.onMouseMove();
-        this.setAnimation();
+        // this.setAnimation();
     }
 
     setImages() {
@@ -151,10 +145,10 @@ export default class Campsite {
         this.actualSite.add(this.satLight);
 
         // Map board light, tent-light can be too harsh, need this to light up map
-        this.mapLight = new THREE.RectAreaLight("#ffffff", 0.01, 0.1, 0.75);
-        this.mapLight.receiveShadow = false;
-        this.mapLight.position.set(3.146837, 1.69, -2.45);
-        this.mapLight.lookAt(3.14, 0, -2.45);
+        // this.mapLight = new THREE.RectAreaLight("#ffffff", 0.01, 0.1, 0.75);
+        // this.mapLight.receiveShadow = false;
+        // this.mapLight.position.set(3.146837, 1.69, -2.45);
+        // this.mapLight.lookAt(3.14, 0, -2.45);
 
         // this.actualSite.add(helper5);
         // this.actualSite.add(this.mapLight);
@@ -212,7 +206,6 @@ export default class Campsite {
             // console.log("mouse moved!");
             this.rotation = (((e.clientX-window.innerWidth/2)*2)/window.innerWidth);
             // console.log(e.clientX, this.rotation);
-            this.lerp.target = this.rotation * 0.025;
         })
     }
 
@@ -221,18 +214,6 @@ export default class Campsite {
     }
 
     update() {
-        // Multiply 0.0009 to slow down the animation. 
-        this.mixer.update(this.time.delta * 0.0009);
 
-        this.lerp.current = GSAP.utils.interpolate(
-            this.lerp.current,
-            this.lerp.target,
-            this.lerp.ease
-        );
-
-        // Slight rotation effect, might have to rotate light points as well. 
-        // For light points: linear algebra to calculate the x & z positions.
-        // this.actualSite.rotation.y = this.lerp.current;
-        
     }
 }

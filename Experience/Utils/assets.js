@@ -7,7 +7,7 @@ export default [
     {
         name: "campsite",
         type: "glbModel",
-        path: "/models/campsite_simplify_wireless_ver3.1.glb",
+        path: "/models/campsite_baking1.glb",
     },
     // {
     //     name: "screen1",

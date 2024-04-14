@@ -55,9 +55,11 @@ export default class Campsite {
                 zmesh.position.set(x, y, z);
                 zscene.add( zmesh );
             }
+
+            this.experience.renderer.update();
         };
 
-        // Wait this is legal??? Isn't this circular?
+        // Textures to be used in model:
         const waterloo = new THREE.TextureLoader().load('textures/waterloo_logo.png', ((texture) => callbackLogo(texture, materialPainting, 0.012, 2.82, 1.335, -2.46)) );
         const materialPainting = new THREE.MeshBasicMaterial({color: 0xffffff, map: waterloo});
         waterloo.colorSpace = THREE.SRGBColorSpace;
@@ -78,8 +80,6 @@ export default class Campsite {
     }
 
     setModel() {
-        // console.log(this.actualSite)
-
         // this.actualSite.scale.set(2, 2, 2);
         // #eb8960
         this.fireLight = new THREE.PointLight("#ff9b70", 200);
@@ -88,46 +88,45 @@ export default class Campsite {
         this.fireLight.distance = 6;
         this.fireLight.castShadow = true;
         this.fireLight.shadow.camera.far = 20;
-        this.fireLight.shadow.mapSize.set(4096, 4096);
+        this.fireLight.shadow.mapSize.set(1024, 1024);
         this.fireLight.shadow.normalBias = 0.05;
         this.fireLight.position.set(3, 1.6, -1);
         const helper1 = new THREE.PointLightHelper(this.fireLight, 1);
         // this.actualSite.add(helper1);
-        this.actualSite.add(this.fireLight);
+        // this.actualSite.add(this.fireLight);
 
         // Tent light
-        this.tentLight = new THREE.PointLight("#ffffff", 0.10);
+        this.tentLight = new THREE.PointLight("#ffffff", 0.32);
         this.tentLight.castShadow = true;
         this.tentLight.shadow.camera.far = 40;
-        this.tentLight.shadow.mapSize.set(2048, 2048);
+        this.tentLight.shadow.mapSize.set(1024, 1024);
         this.tentLight.shadow.normalBias = 0.05;
-        this.tentLight.position.set(-2.5, 1.5, -1.6);
+        this.tentLight.position.set(-1.5, 1.5, -1.6);
         // const helper2 = new THREE.PointLightHelper(this.tentLight);
-        // this.tentLight.add(helper2);
         // this.actualSite.add(helper2);
-        this.actualSite.add(this.tentLight);
+        // this.actualSite.add(this.tentLight);
 
         // Tent table light
         this.tentTableLight = new THREE.PointLight("#ffffff", 0.2);
         this.tentTableLight.castShadow = true;
         this.tentTableLight.shadow.camera.far = 40; 
-        this.tentTableLight.shadow.mapSize.set(2048, 2048);
+        this.tentTableLight.shadow.mapSize.set(1024, 1024);
         this.tentTableLight.shadow.normalBias = 0.05;
         this.tentTableLight.position.set(-1.6, 1.2, -0.9);
         // this.tableLightHelper = new THREE.PointLightHelper(this.tentTableLight, 0.1);
-        this.actualSite.add(this.tentTableLight);
         // this.actualSite.add(this.tableLightHelper);
+        // this.actualSite.add(this.tentTableLight);
         
 
         // Tent ambient light
         this.tentAmbientLight = new THREE.PointLight("#ffffff", 0.1);
         this.tentAmbientLight.castShadow = true;
         this.tentAmbientLight.shadow.camera.far = 20;
-        this.tentAmbientLight.shadow.mapSize.set(4096, 4096);
+        this.tentAmbientLight.shadow.mapSize.set(1024, 1024);
         this.tentAmbientLight.shadow.normalBias = 0.05;
         this.tentAmbientLight.position.set(-1.5, 0.75, -1.6);
 
-        this.actualSite.add(this.tentAmbientLight);
+        // this.actualSite.add(this.tentAmbientLight);
 
         // Satellite Dish Light
         this.satLight = new THREE.PointLight("#0066ff", 20);
@@ -136,13 +135,13 @@ export default class Campsite {
         this.satLight.distance = 10;
         this.satLight.castShadow = true;
         this.satLight.shadow.camera.far = 20;
-        this.satLight.shadow.mapSize.set(4096, 4096);
+        this.satLight.shadow.mapSize.set(1024, 1024);
         this.satLight.shadow.normalBias = 0.05;
         this.satLight.position.set(-2.1, 2, 0.8);
         const helper3 = new THREE.PointLightHelper(this.satLight);
         // this.satLight.add(helper3);
         // this.actualSite.add(helper3);
-        this.actualSite.add(this.satLight);
+        // this.actualSite.add(this.satLight);
 
         // Map board light, tent-light can be too harsh, need this to light up map
         // this.mapLight = new THREE.RectAreaLight("#ffffff", 0.01, 0.1, 0.75);
@@ -187,11 +186,76 @@ export default class Campsite {
                 });
             }
 
-        });
+            if (child.name === "Log_Seat_1" || child.name === "Log_Seat_2"){
+                const texture = new THREE.TextureLoader().load('textures/Baked_Logseats_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                texture.encoding = THREE.sRGBEncoding;
+                // texture.flipX = false;
+                // texture.wrapS  
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                child.material = mat;
+                console.log("Log Seat 1 texture loaded");
+                console.log(child);
+            }
 
+            if (child.name === "Cooler_body" || child.name === "Guitar" || child.name === "Cooler_cap") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Campfire_Deco_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                child.material = mat;
+                console.log("Cooler Body texture loaded");
+                console.log(child);
+            }
+
+            if (child.name === "Grass_layer") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Grass_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                child.material = mat;
+                console.log("Grass texture loaded");
+                console.log(child);
+            }
+
+            if (child.name === "Campfire_rocks" || child.name === "Campfire_wood"){
+                const texture = new THREE.TextureLoader().load('textures/Baked_test_small.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                child.material = mat;
+                console.log("Grass texture loaded");
+                console.log(child);
+            }
+            
+            if (child.name === "Grass" || child.name === "Rock2.002" || child.name === "Rock2.004"){
+                const texture = new THREE.TextureLoader().load('textures/Baked_Grass_Deco_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                child.material = mat;
+                console.log("Grass texture loaded");
+                console.log(child);
+            }
+
+        });
+        this.actualSite.scale.set(1, 1, 1);
         this.scene.add(this.actualSite);
         // this.actualSite.scale.set(0.11, 0.11, 0.11);
-        this.actualSite.scale.set(1, 1, 1);
     }
 
     // For animations created in blender:
@@ -203,7 +267,7 @@ export default class Campsite {
 
     onMouseMove(){
         window.addEventListener("mousemove", (e)=>{
-            // console.log("mouse moved!");
+            console.log("mouse moved!");
             this.rotation = (((e.clientX-window.innerWidth/2)*2)/window.innerWidth);
             // console.log(e.clientX, this.rotation);
         })

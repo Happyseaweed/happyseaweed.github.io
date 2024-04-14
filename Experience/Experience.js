@@ -28,7 +28,6 @@ export default class Experience {
         this.renderer = new Renderer();
         this.resources = new Resources(assets);
         this.theme = new Theme();
-
         this.world = new World();
 
         this.time.on("update", ()=>{

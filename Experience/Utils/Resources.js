@@ -39,6 +39,7 @@ export default class Resources extends EventEmitter{
     }
 
     startLoading() {
+        console.log(`Loading assets (${this.assets.length})...`)
          for(const asset of this.assets) {
             if (asset.type === "glbModel"){
                 this.loaders.gltfLoader.load(asset.path, (file)=>{
@@ -82,8 +83,6 @@ export default class Resources extends EventEmitter{
         this.items[asset.name].receiveShadow = true;
         
         this.loaded++;
-        // console.log("Asset is loading...");
-        // console.log(file);
         // Check if all assets are loaded:
         if (this.loaded === this.queue){
             console.log("All assets loaded.")

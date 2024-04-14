@@ -19,8 +19,8 @@ export default class Renderer{
     setRenderer() {
         this.renderer = new THREE.WebGL1Renderer({
             canvas: this.canvas,
-            // antialias: true,
-            antialias: false,
+            antialias: true,
+            // antialias: false,
         });
 
         // this.renderer.useLegacyLights = true;

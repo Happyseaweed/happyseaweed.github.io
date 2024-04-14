@@ -26,7 +26,7 @@ export default class Environment {
         this.sunLight.position.set(0, 38, 5);
         // Set the shadow camera to be bigger so the entire scene is enclosed.
         this.sunLight.shadow.camera.scale.set(5, 5, 5);
-        this.scene.add(this.sunLight);
+        // this.scene.add(this.sunLight);
 
         // Ambient light for niceness :P
         this.ambientLight = new THREE.AmbientLight("#ffffff", 0.2);

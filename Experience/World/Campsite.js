@@ -196,8 +196,7 @@ export default class Campsite {
                     map: texture,
                 })
                 child.material = mat;
-                console.log("Log Seat 1 texture loaded");
-                console.log(child);
+                console.log("Log seats texture loaded");
             }
 
             if (child.name === "Cooler_body" || child.name === "Guitar" || child.name === "Cooler_cap") {
@@ -208,9 +207,12 @@ export default class Campsite {
                 const mat = new THREE.MeshStandardMaterial({
                     map: texture,
                 })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+
                 child.material = mat;
-                console.log("Cooler Body texture loaded");
-                console.log(child);
+                console.log("Campfire Deco texture loaded");
             }
 
             if (child.name === "Grass_layer") {
@@ -223,7 +225,6 @@ export default class Campsite {
                 })
                 child.material = mat;
                 console.log("Grass texture loaded");
-                console.log(child);
             }
 
             if (child.name === "Campfire_rocks" || child.name === "Campfire_wood"){
@@ -235,11 +236,10 @@ export default class Campsite {
                     map: texture,
                 })
                 child.material = mat;
-                console.log("Grass texture loaded");
-                console.log(child);
+                console.log("Campfire texture loaded");
             }
             
-            if (child.name === "Grass" || child.name === "Rock2.002" || child.name === "Rock2.004"){
+            if (child.name === "Grass"){
                 const texture = new THREE.TextureLoader().load('textures/Baked_Grass_Deco_s.jpg', () => {this.experience.renderer.update();});
                 texture.flipY = false;
                 // texture.flipX = false;
@@ -248,10 +248,123 @@ export default class Campsite {
                     map: texture,
                 })
                 child.material = mat;
-                console.log("Grass texture loaded");
-                console.log(child);
+                console.log("Grass decoration texture loaded");
             }
 
+            if (child.name === "Water" || child.name === "Soil_layer"){
+                const texture = new THREE.TextureLoader().load('textures/Baked_Water_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                child.material = mat;
+                console.log("Water texture loaded");
+            }
+            
+            if (child.name === "Rock2_0" || child.name === "Rock2_1" || child.name === "Rock2_2" || child.name === "Rock2_3"){
+                const texture = new THREE.TextureLoader().load('textures/Baked_Rocks_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                child.material = mat;
+                console.log("Rocks texture loaded");
+            }
+
+            if (child.name === "Small_tree1" || child.name === "Small_tree2" || child.name === "Small_tree3"){
+                const texture = new THREE.TextureLoader().load('textures/Baked_SmallTree_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Small Tree texture loaded");
+            }
+
+
+            if (child.name === "Large_tree"){
+                const texture = new THREE.TextureLoader().load('textures/Baked_LargeTree_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Large Tree texture loaded");
+            }
+
+            if (child.name === "Satellite_Dish") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Satellite_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Large Tree texture loaded");
+            }
+
+            if (child.name === "Map_board") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Board_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Board texture loaded");
+            }
+
+            if (child.name === "Board_images") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Board_Images_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Board Images texture loaded");
+            }
+            
+            if (child.name === "Tent") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Tent_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Tent texture loaded");
+            }
         });
         this.actualSite.scale.set(1, 1, 1);
         this.scene.add(this.actualSite);

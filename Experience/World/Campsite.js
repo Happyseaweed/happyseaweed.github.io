@@ -439,6 +439,21 @@ export default class Campsite {
                 }
                 child.material = mat;
                 console.log("Chair texture loaded");
+            }            
+            
+            if (child.name === "Foreign_obj") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Foreign_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Crystals texture loaded");
             }
         });
         this.actualSite.scale.set(1, 1, 1);

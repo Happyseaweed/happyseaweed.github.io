@@ -365,6 +365,81 @@ export default class Campsite {
                 child.material = mat;
                 console.log("Tent texture loaded");
             }
+            
+            if (child.name === "Table_w_light") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Table_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Table texture loaded");
+            }
+
+            if (child.name === "Table_top_content") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Table_content_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Table content texture loaded");
+            }
+
+            if (child.name === "Robot_arm") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Robot_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Robot arm texture loaded");
+            }
+
+            if (child.name === "Computer") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Computer_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Computer texture loaded");
+            }
+
+            if (child.name === "Chair") {
+                const texture = new THREE.TextureLoader().load('textures/Baked_Chair_s.jpg', () => {this.experience.renderer.update();});
+                texture.flipY = false;
+                // texture.flipX = false;
+                texture.encoding = THREE.sRGBEncoding;
+                const mat = new THREE.MeshStandardMaterial({
+                    map: texture,
+                })
+                if (child.children.length !== 0){
+                    child.children.forEach(c => c.material = mat);
+                }
+                child.material = mat;
+                console.log("Chair texture loaded");
+            }
         });
         this.actualSite.scale.set(1, 1, 1);
         this.scene.add(this.actualSite);

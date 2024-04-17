@@ -102,7 +102,7 @@ export default class Campsite {
         this.actualSite.children.forEach(child=>{
 
             if (child.name === "Log_Seat_1" || child.name === "Log_Seat_2"){
-                this.setModelTexture(child, child.name, 'textures/Baked_Logseats_s.jpg');
+                this.setModelTexture(child, child.name, 'textures/Baked_Logseats_1024.jpg');
             }
 
             if (child.name === "Cooler_body" || child.name === "Guitar" || child.name === "Cooler_cap") {
@@ -114,7 +114,7 @@ export default class Campsite {
             }
 
             if (child.name === "Campfire_rocks" || child.name === "Campfire_wood"){
-                this.setModelTexture(child, child.name, 'textures/Baked_test_small.jpg');
+                this.setModelTexture(child, child.name, 'textures/Baked_Campfire_s.jpg');
             }
             
             if (child.name === "Grass"){
@@ -146,7 +146,7 @@ export default class Campsite {
             }
 
             if (child.name === "Board_images") {
-                this.setModelTexture(child, child.name, 'textures/Baked_Board_Images_s.jpg');
+                this.setModelTexture(child, child.name, 'textures/Baked_Board_Images_1024.jpg');
             }
             
             if (child.name === "Tent_poles") {
@@ -158,7 +158,7 @@ export default class Campsite {
             }
 
             if (child.name === "Tent_doors") {
-                this.setModelTexture(child, child.name, 'textures/Baked_Tent_Doors_s.jpg');
+                this.setModelTexture(child, child.name, 'textures/Baked_Tent_Doors_1024.jpg');
             }
 
             if (child.name === "Tent_top") {
@@ -174,15 +174,15 @@ export default class Campsite {
             }
 
             if (child.name === "Robot_arm") {
-                this.setModelTexture(child, child.name, 'textures/Baked_Robot_s.jpg');
+                this.setModelTexture(child, child.name, 'textures/Baked_Robot_1024.jpg');
             }
 
             if (child.name === "Computer") {
-                this.setModelTexture(child, child.name, 'textures/Baked_Computer_s.jpg');
+                this.setModelTexture(child, child.name, 'textures/Baked_Computer_512.jpg');
             }
 
             if (child.name === "Chair") {
-                this.setModelTexture(child, child.name, 'textures/Baked_Chair_s.jpg');
+                this.setModelTexture(child, child.name, 'textures/Baked_Chair_512.jpg');
             }            
             
             if (child.name === "Foreign_obj") {

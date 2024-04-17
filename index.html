@@ -83,11 +83,11 @@
               class="flex flex-col sm:flex-row min-[969px]:flex-col 2xl:flex-row"
             >
               <div class="shrink-0 mt-[70px] mr-[10px] place-content-center">
-                <!-- <img
+                <img
                   loading="lazy"
                   class="w-96 min-[640px]:w-72 min-[969px]:w-64 2xl:w-80 rounded-xl place-content-center mx-auto"
                   src="./images/siwei_zipline.jpg"
-                /> -->
+                />
               </div>
 
               <div>
@@ -113,19 +113,28 @@
               </div>
             </div>
 
-            <div class="collapsible">
-              <h2
-                class="collapsible-header p-2 text-xl font-bold leading-10 mt-[100px]"
-              >
-                More About Me
-              </h2>
+
+            <div class="m-1 p-9 flex justify-between">
+              <a href="#"><img class="w-7" src="public/images/github-icon.png"></a>
+              <a href="#"><img class="w-7" src="public/images/linkedin-icon.png"></a>
+              <a href="#"><img class="w-7" src="public/images/mail-icon.png"></a>
+            </div>
+
+            <div class="m-1">
+              <div class="collapsible-header-container flex justify-center">
+                <h2
+                  class="collapsible-header text-center text-xl font-bold leading-10 mt-[100px]"
+                >
+                  More About Me
+                </h2> 
+              </div>
               <div class="collapsible-content">
                 <div class="shrink-0 mt-[70px] mb-[70px] place-content-center flex-row">
-                  <!-- <img
+                  <img
                     loading="lazy"
                     class="w-96 min-[640px]:w-72 min-[969px]:w-96 2xl:w-96 rounded-xl place-content-center mx-auto"
                     src="./images/wilderness2_hi-res.jpg"
-                  /> -->
+                  />
                 </div>
                 <p class="p-2 text-lg">
                   In my spare time, I like to listen to music and play the
@@ -138,20 +147,14 @@
                   >
                   is a big part of my life as it helps me think as well as
                   relax.
-                  <!-- 
-                  In my spare time, I like to listen to and play music, mainly
-                  the guitar and piano. I also enjoy cooking and racing against
-                  the clock to see how fast I can make dishes. Career-wise, I am
-                  interested in technical & algorithmic topics. Things like
-                  robotics, machine learning and cryptography are exciting. -->
                 </p>
 
                 <div class="shrink-0 mt-[70px] mb-[70px] place-content-center flex-row">
-                  <!-- <img
+                  <img
                     loading="lazy"
                     class="w-96 min-[640px]:w-72 min-[969px]:w-96 2xl:w-96 rounded-xl place-content-center mx-auto"
                     src="./images/camp_fire_hi-res.jpg"
-                  /> -->
+                  />
                 </div>
                 <p class="p-2 text-lg">
                   I like getting my hands dirty and building things. The joy of designing, prototyping, and building just to bring an idea to life is absolutely unmatched.
@@ -160,28 +163,38 @@
               </div>
             </div>
 
-            <hr class="mt-[100px]" />
-            <h3 class="p-2 section-heading mt-[100px]">What I'm up to now:</h3>
+            <!-- <hr class="mt-[100px]" /> -->
+            <h3 class="m-1 section-heading mt-[100px]">What I'm up to now:</h3>
 
-            <ul class="list-disc">
+            <ul class="list-none">
               <li class="ml-10 mt-5 list-item">
-                <p>
-                  SWE intern at
-                  <a class="bdo-link" href="https://bdo.ca/" target="_blank"
-                    >BDO Canada LLP</a
-                  >, working on AI chatbots and task automations.
-                </p>
+                <div class="w-full flex-row flex">
+                  <a class="mr-6" href="#">
+                    <img class="w-16 rounded-md" src="public/textures/bdo_logo.png">
+                  </a>
+                  <p>
+                    SWE intern at
+                    <a class="bdo-link" href="https://bdo.ca/" target="_blank"
+                      >BDO Canada LLP</a
+                    >, working on AI chatbots and task automations.
+                  </p>
+                </div>
               </li>
               <li class="ml-10 mt-5 list-item">
-                <p>
-                  Software Lead for UWaterloo BioMechatronics Design Team,
-                  building EMG-powered prosthetics.
-                </p>
+                <div class="w-full flex-row flex">
+                  <a class="mr-6" href="#">
+                    <img class="w-20 rounded-md" src="public/textures/waterloo_logo.png">
+                  </a>
+                  <p>
+                    Software Lead for UWaterloo BioMechatronics Design Team,
+                    building EMG-powered prosthetics.
+                  </p>
+                </div>
               </li>
             </ul>
 
             <!-- Skills table -->
-            <h3 class="section-heading mt-[100px]">What I work with:</h3>
+            <h3 class="m-1 section-heading mt-[100px]">What I work with:</h3>
 
             <div
               id="skillsContainer"
@@ -277,7 +290,7 @@
 
               <div class="float-right flex items-center">
                 <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
-                <h3 class="text-xs">Aug 2023</h3>
+                <h3 class="text-xs">Ongoing</h3>
               </div>
             </div>
 
@@ -550,6 +563,6 @@
     </div>
 
     <script type="module" src="/main.js"></script>
-    <!-- <script src="skills.js"></script> -->
+    <script src="skills.js"></script>
   </body>
 </html>

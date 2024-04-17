@@ -19,8 +19,8 @@ export default class Renderer{
     setRenderer() {
         this.renderer = new THREE.WebGL1Renderer({
             canvas: this.canvas,
-            antialias: true,
-            // antialias: false,
+            // Disable for better performance, at reduced quality...
+            antialias: true,    
         });
 
         // this.renderer.useLegacyLights = true;
@@ -48,6 +48,8 @@ export default class Renderer{
 
     update() {
         this.renderer.render(this.scene, this.camera.perspectiveCamera);
-        console.log("Number of Triangles :", this.renderer.info.render.triangles);
+        // For debugging purposes, does not really impact performance
+        // even if it is un-commented.
+        // console.log("Number of Triangles :", this.renderer.info.render.triangles);
     }
 }

@@ -9,7 +9,6 @@ export default class Environment {
         this.resources = this.experience.resources;
 
         this.setSunlight();
-
     }
 
     setSunlight() {
@@ -18,6 +17,8 @@ export default class Environment {
         // Sunset:
         // this.sunLight = new THREE.DirectionalLight("#ffcc73", 0.5);
         
+        // Default sunlight
+        // (sd): disabled for now to increase performance. Not necessary to have.
         this.sunLight.castShadow = true;
         this.sunLight.shadow.camera.near = 0.5;
         this.sunLight.shadow.camera.far = 20;
@@ -28,13 +29,17 @@ export default class Environment {
         this.sunLight.shadow.camera.scale.set(5, 5, 5);
         // this.scene.add(this.sunLight);
 
-        // Ambient light for niceness :P
-        this.ambientLight = new THREE.AmbientLight("#ffffff", 0.2);
+        // Ambient light
+        // (sd): ambient light is needed so we can see things, and not just
+        //       complete blackness. Disable shadows for performance.
+        this.ambientLight = new THREE.AmbientLight("#ffffff", 0.3);
         this.ambientLight.castShadow = false;
         this.scene.add(this.ambientLight);
     }
 
     switchTheme(theme) {
+        // (sd): DEPRECATED, MIGHT RE-USE IN THE FUTURE.
+        
         // Note: Can use GSAP.to(), but we can't "spam" renderer.update() for a specified amount of time.
         //       Or can we?????? Anyways, alternative is just to change the values directly
         if (theme === "dark"){
@@ -42,6 +47,7 @@ export default class Environment {
             this.sunLight.color.setRGB(15/255, 15/255, 15/255);
             this.ambientLight.color.setRGB(0.2, 0.2, 0.2);
             this.experience.world.campsite.fireLight.distance = 10;
+            // Complex changes to sunlight; disabled for now, for performance.
             // GSAP.to(this.sunLight.color, {
             //     r: 15/255,
             //     g: 15/255,
@@ -65,6 +71,7 @@ export default class Environment {
             this.ambientLight.color.setRGB(1, 1, 1);
             this.experience.world.campsite.fireLight.distance = 4;
             this.experience.world.campsite.tentLight.intensity = 0.25;
+            // Complex changes to sunlight; disabled for now, for performance.
             // GSAP.to(this.sunLight.color, {
             //     r: 255 / 255,
             //     g: 247 / 255,

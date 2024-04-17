@@ -14,23 +14,23 @@ export default class World {
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
-        this.theme = this.experience.theme;
+        // this.theme = this.experience.theme;
 
+        // Runs once everything loads.
         this.resources.on("ready", ()=>{
             this.environment = new Environment();
             this.campsite = new Campsite();
             this.controls = new Controls();
             this.floor = new Floor();
-            console.log(this.campsite);
             console.log("Created World");
             this.experience.renderer.update();
         });
 
-        this.theme.on("switch", (theme) => {
-            this.switchTheme(theme);
-        });
+        // (sd): DEPRECATED, MIGHT RE-USE IN THE FUTURE.
 
-        // this.campsite = new Campsite();
+        // this.theme.on("switch", (theme) => {
+        //     this.switchTheme(theme);
+        // });
     }
 
     switchTheme(theme) {

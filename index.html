@@ -14,7 +14,8 @@
     </div>
 
     <div class="page">
-      <div class="toggle-bar top-10 right-6">
+      <!-- Light/Dark theme toggle disabled, as no shadow-casting lighting is used. -->
+      <!-- <div class="toggle-bar top-10 right-6">
         <button class="toggle-button">
           <div class="sun-wrapper">
             <svg
@@ -44,7 +45,7 @@
             </svg>
           </div>
         </button>
-      </div>
+      </div> -->
 
       <div class="page-wrapper" id="content">
         <section class="hero">
@@ -84,7 +85,6 @@
             >
               <div class="shrink-0 mt-[70px] mr-[10px] place-content-center">
                 <img
-                  loading="lazy"
                   class="w-96 min-[640px]:w-72 min-[969px]:w-64 2xl:w-80 rounded-xl place-content-center mx-auto"
                   src="./images/siwei_zipline.jpg"
                 />
@@ -109,15 +109,16 @@
                   <a class="creative-link" href="#">creative</a> point of view,
                   striving to find the most optimized and elegant solution.
                 </p>
+                <!-- Corny jokes, commented out to reduce corniness (-_-*)  -->
                 <!-- <p class="p-4">In my book, challenging problems are just like piñatas – smack 'em with the right idea, and solutions come tumbling out in a shower of confetti!</p> -->
               </div>
             </div>
 
 
             <div class="m-1 p-9 flex justify-between">
-              <a href="#"><img class="w-7" src="public/images/github-icon.png"></a>
-              <a href="#"><img class="w-7" src="public/images/linkedin-icon.png"></a>
-              <a href="#"><img class="w-7" src="public/images/mail-icon.png"></a>
+              <a href="#"><img class="w-7" src="images/github-icon.png"></a>
+              <a href="#"><img class="w-7" src="images/linkedin-icon.png"></a>
+              <a href="#"><img class="w-7" src="images/mail-icon.png"></a>
             </div>
 
             <div class="m-1">
@@ -131,7 +132,6 @@
               <div class="collapsible-content">
                 <div class="shrink-0 mt-[70px] mb-[70px] place-content-center flex-row">
                   <img
-                    loading="lazy"
                     class="w-96 min-[640px]:w-72 min-[969px]:w-96 2xl:w-96 rounded-xl place-content-center mx-auto"
                     src="./images/wilderness2_hi-res.jpg"
                   />
@@ -151,7 +151,6 @@
 
                 <div class="shrink-0 mt-[70px] mb-[70px] place-content-center flex-row">
                   <img
-                    loading="lazy"
                     class="w-96 min-[640px]:w-72 min-[969px]:w-96 2xl:w-96 rounded-xl place-content-center mx-auto"
                     src="./images/camp_fire_hi-res.jpg"
                   />
@@ -162,7 +161,8 @@
 
               </div>
             </div>
-
+            
+            <!-- (sd): Remove this line or not? Can't decide, so will try it removed first. -->
             <!-- <hr class="mt-[100px]" /> -->
             <h3 class="m-1 section-heading mt-[100px]">What I'm up to now:</h3>
 
@@ -170,7 +170,7 @@
               <li class="ml-10 mt-5 list-item">
                 <div class="w-full flex-row flex">
                   <a class="mr-6" href="#">
-                    <img class="w-16 rounded-md" src="public/textures/bdo_logo.png">
+                    <img class="w-16 rounded-md" src="textures/bdo_logo.png">
                   </a>
                   <p>
                     SWE intern at
@@ -183,7 +183,7 @@
               <li class="ml-10 mt-5 list-item">
                 <div class="w-full flex-row flex">
                   <a class="mr-6" href="#">
-                    <img class="w-20 rounded-md" src="public/textures/waterloo_logo.png">
+                    <img class="w-20 rounded-md" src="textures/waterloo_logo.png">
                   </a>
                   <p>
                     Software Lead for UWaterloo BioMechatronics Design Team,
@@ -236,7 +236,6 @@
               </div>
 
               <div class="float-right flex items-center">
-                <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
                 <h3 class="text-xs">Jan 2023</h3>
               </div>
             </div>
@@ -289,7 +288,6 @@
               </div>
 
               <div class="float-right flex items-center">
-                <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
                 <h3 class="text-xs">Ongoing</h3>
               </div>
             </div>
@@ -339,7 +337,6 @@
               </div>
 
               <div class="float-right flex items-center">
-                <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
                 <h3 class="text-xs">May 2023</h3>
               </div>
             </div>
@@ -391,7 +388,6 @@
               </div>
 
               <div class="float-right flex items-center">
-                <!-- <a href="#" target="_blank" class="font-bold waterloo-link">Jan 2023</a> -->
                 <h3 class="text-xs">In Progress</h3>
               </div>
             </div>
@@ -497,72 +493,22 @@
               Thanks for stopping by! If you would like to get in touch with me,
               feel free to connect with me through any of the following.
             </p>
-
-            <div
-              class="w-full flex flex-col min-[1700px]:flex-row justify-between"
-            >
-              <a
-                href="https://www.linkedin.com/in/siwei-du-6235a31b1/"
-                target="_blank"
-                class="w-full min-[1700px]:w-44 h-20 mt-[40px] flex flex-row box-border p-3 bg-blue-500 rounded-xl duration-200 hover:bg-blue-700"
-              >
-                <div class="flex items-center">
-                  <img
-                    loading="lazy"
-                    class="w-14 resize-none"
-                    src="./images/linkedin_logo.png"
-                    title="LinkedIn"
-                  />
-                </div>
-                <div class="flex items-center ml-[20px]">LinkedIn</div>
-              </a>
-
-              <a
-                href="mailto: contact.siwei@gmail.com"
-                target="_blank"
-                class="w-full min-[1700px]:w-44 h-20 mt-[40px] flex flex-row box-border p-3 bg-red-500 rounded-xl duration-200 hover:bg-red-700"
-              >
-                <div class="flex items-center">
-                  <img
-                    loading="lazy"
-                    class="w-14 resize-none"
-                    src="./images/gmail_logo.png"
-                    title="Gmail"
-                  />
-                </div>
-                <div class="flex items-center ml-[20px]">Email</div>
-              </a>
-
-              <a
-                href="https://github.com/Happyseaweed"
-                target="_blank"
-                class="w-full min-[1700px]:w-44 h-20 mt-[40px] flex flex-row box-border p-3 bg-white rounded-xl duration-200 hover:bg-gray-400"
-              >
-                <div class="flex items-center">
-                  <img
-                    loading="lazy"
-                    class="w-14 rounded-xl"
-                    src="./images/github_logo.png"
-                    title="Github"
-                  />
-                </div>
-                <div class="flex items-center ml-[20px] text-black">Github</div>
-              </a>
-            </div>
+ 
+            <div class="m-1 p-9 flex justify-between">
+              <a href="#"><img class="w-7" src="images/github-icon.png"></a>
+              <a href="#"><img class="w-7" src="images/linkedin-icon.png"></a>
+              <a href="#"><img class="w-7" src="images/mail-icon.png"></a>
+            </div>           
           </div>
         </section>
 
         <div class="fourth-move section-margin"></div>
         <div class="section-margin"></div>
-        <div class="w-full flex justify-center">
-          <div class="end-msg m-6">
-            Designed and Built by Siwei Du
-          </div>
-        </div>
+        <div class="w-full flex justify-center">Designed and Built by Siwei Du</div>
       </div>
     </div>
 
     <script type="module" src="/main.js"></script>
-    <script src="skills.js"></script>
+    <script type="module" src="skills.js"></script>
   </body>
 </html>

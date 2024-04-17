@@ -16,13 +16,7 @@ export default class Controls {
         this.controls = this.experience.camera.controls;
         this.site = this.experience.world.campsite.actualSite;
 
-        // this.site.children.forEach((child) => {
-        //     if (child.name === 'fireLight') {
-        //         console.log(child);
-        //         this.fireLight = child;
-        //     }
-        // });
-
+        // Scrolling & camera movement path;
         this.progress = 0;
         this.dummyVector = new THREE.Vector3(0, 0, 0);
         this.firstSectionOrbitCenter = new THREE.Vector3(3, 1.6, -1.3);
@@ -37,9 +31,10 @@ export default class Controls {
         // this.onWheel();
 
         // Stats stuff
+        //! (sd): EXCLUDE before deployment!
         var stats = new Stats();
         stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-        document.body.appendChild( stats.dom );
+        // document.body.appendChild( stats.dom );
 
         function animate() {
 
@@ -77,7 +72,7 @@ export default class Controls {
             height = content.clientHeight;
             content.style.overflow = "visible"
             document.body.style.height = height + "px";
-        return height - document.documentElement.clientHeight;
+            return height - document.documentElement.clientHeight;
         }
     
         ScrollTrigger.addEventListener("refresh", () => {
@@ -113,7 +108,7 @@ export default class Controls {
             invalidateOnRefresh: true,
             start: 0,
             end: refreshHeight,
-        refreshPriority: -999,
+            refreshPriority: -999,
             scrub: smoothness,
             onUpdate: self => {
                 if (isProxyScrolling) {
@@ -213,54 +208,6 @@ export default class Controls {
                     },
                     'camera-move1'
                 );
-
-                // this.firstMoveMapTimeline.to(
-                //     this.map.position, {
-                //         x: 4.3,
-                //         y: 1.5,
-                //         z: 0.2,
-                //     },
-                //     'map-move1'
-                // );
-
-                // this.firstMoveMapTimeline.to(
-                //     this.map.rotation, {
-                //         x: 2*Math.PI-0.3,
-                //         y: 1,
-                //         z: 0.2,
-                //     },
-                //     'map-move1'
-                // );
-
-                // this.firstMoveDetailTimeline = new GSAP.timeline({
-                //     scrollTrigger: {
-                //         trigger: ".first-move-detail",
-                //         start: "top top",
-                //         end: "bottom 300px",
-                //         scrub: 0.6,
-                //         markers: true,
-                //         invalidateOnRefresh: true,
-                //         imeediateRender: false,
-                //     }
-                // });
-
-                // this.firstMoveDetailTimeline.to(
-                //     this.camera.perspectiveCamera.position, {
-                //         x: 3.75,
-                //         y: 1.3,
-                //         z: -0.25,
-                //     },
-                //     'close_up_on_map'
-                // );
-
-                // this.firstMoveDetailTimeline.to(
-                //     this.controls.target, {
-                //         x: 2.8,
-                //         y: 1.25,
-                //         z: -1.6,
-                //     },
-                //     'close_up_on_map'
-                // );
 
                 // Second Move Section ---------------------------------------------------
                 this.secondMoveTimeline = new GSAP.timeline({

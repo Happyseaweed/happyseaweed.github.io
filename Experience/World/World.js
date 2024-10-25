@@ -45,11 +45,11 @@ export default class World {
     }
 
     update() {
-        if (this.controls){
+        if (this.controls) {
             this.controls.update();
         }
 
-        if (this.campsite){
+        if (this.campsite) {
             this.campsite.update();
         }
     }

@@ -8,7 +8,8 @@ const languageSkillsData = [
 
 const librarySkillsData = [
   { name: "React", image: "./images/react_logo.png", title: "React" },
-  { name: "Three JS", image: "./images/threejs_logo.png", title: "Three JS" },
+  { name: "NodeJS", image: "./images/node_logo.png", title: "NodeJS" },
+  { name: "Three JS", image: "./images/threejs_logo.png", title: "ThreeJS" },
   { name: "OpenCV", image: "./images/opencv_logo.png", title: "OpenCV" },
   {
     name: "Media Pipe",
@@ -84,68 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
   populateSkills("librarySkillsContainer", librarySkillsData);
   populateSkills("otherSkillsContainer", otherSkillsData);
 
-});
-
-
-
-
-
-
-let currentIndex = 0;
-let autoScrollInterval;
-let userInteracted = false;
-
-function showSlide(index) {
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const totalItems = carouselItems.length;
-    currentIndex = (index + totalItems) % totalItems;
-    
-    carouselItems.forEach((item, idx) => {
-        item.classList.toggle('active', idx === currentIndex);
-    });
-
-    updateDots();
-    resetAutoScroll();
-}
-
-function nextSlide() {
-    showSlide(currentIndex + 1);
-}
-
-function prevSlide() {
-    showSlide(currentIndex - 1);
-}
-
-function updateDots() {
-    const dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-    });
-}
-
-function resetAutoScroll() {
-    clearInterval(autoScrollInterval);
-    // if (!userInteracted) {
-    //     autoScrollInterval = setInterval(nextSlide, 5000);
-    // }
-}
-
-function userInteraction() {
-    userInteracted = true;
-    resetAutoScroll();
-}
-
-// Initialize dots and auto-scroll
-document.addEventListener('DOMContentLoaded', () => {
-    showSlide(currentIndex);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const nextButton = document.querySelectorAll(".next");
-  console.log(nextButton);
-
-  nextButton[0].addEventListener("click", function () {
-    console.log("CLICKED");
-    nextSlide();
-  });
 });

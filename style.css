@@ -10,7 +10,8 @@
   box-sizing: border-box;
 }
 
-html, body { 
+html,
+body {
   font-family: 'Oxygen Mono', monospace;
 }
 
@@ -33,13 +34,13 @@ html, body {
   /* --color-background-light: #d6bfaf; */
   /* --color-background-light: #ffd4b5; */
   --color-background-light: #f1cd6c;
-  
+
 
   /* Dark theme */
   --color-text-dark: #FAF4E5;
   --color-background-dark: #111518ff;
   /* --color-background-dark: #421A10; */
-  
+
 
   /* CSS HEX LIGHT */
   --apple-green: #899F26ff;
@@ -120,7 +121,8 @@ html, body {
   z-index: 99999;
 }
 
-.sun-wrapper, .moon-wrapper {
+.sun-wrapper,
+.moon-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -176,7 +178,7 @@ html, body {
   cursor: pointer;
   border-radius: 0;
   padding: 0;
-  transition: all 0.3s ease-in-out;  
+  transition: all 0.3s ease-in-out;
 }
 
 .collapsible-header:hover {
@@ -199,7 +201,8 @@ html, body {
 }
 
 .waterloo-link {
-  box-shadow: inset 0 -5px 0 0 #ffd64e;
+  /* box-shadow: inset 0 -5px 0 0 #ffd64e; */
+  box-shadow: inset 0 -5px 0 0 #D2B48C;
   color: var(--color-text);
   font-weight: 700;
   padding: 0 .25rem;
@@ -209,11 +212,13 @@ html, body {
 
 .waterloo-link:hover {
   color: var(--color-text-dark);
-  box-shadow: inset 0 -30px 0 0 #ffd64e;
+  /* box-shadow: inset 0 -30px 0 0 #ffd64e; */
+  box-shadow: inset 0 -30px 0 0 #D2B48C;
 }
 
 .creative-link {
-  box-shadow: inset 0 -5px 0 0 #b5c036;
+  /* box-shadow: inset 0 -5px 0 0 #b5c036; */
+  box-shadow: inset 0 -5px 0 0 #D2B48C;
   color: var(--color-text);
   font-weight: 700;
   padding: 0 .25rem;
@@ -223,7 +228,8 @@ html, body {
 
 .creative-link:hover {
   color: var(--color-text-dark);
-  box-shadow: inset 220px 0 0 0 #b5c036;
+  /* box-shadow: inset 220px 0 0 0 #b5c036; */
+  box-shadow: inset 0 220px 0 0 #D2B48C;
 }
 
 .music-link {
@@ -268,6 +274,20 @@ html, body {
   box-shadow: inset -220px 0 0 0 #ef3c24;
 }
 
+.bdo-link {
+  box-shadow: inset 0 -5px 0 0 #204399;
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.bdo-link:hover {
+  color: var(--color-text-light);
+  box-shadow: inset -220px 0 0 0 #204399;
+}
+
 .end-msg {
   background-color: var(--color-section-title);
   box-shadow: 4px 4px var(--color-section-background);
@@ -298,7 +318,7 @@ html, body {
 
 .third-section {
   color: var(--color-section-title);
-  border-radius:60px;
+  border-radius: 60px;
 }
 
 
@@ -338,7 +358,7 @@ html, body {
 }
 
 /* Title Decoration Stuff */
-.section-title{
+.section-title {
   position: relative;
   /* color: white; */
 }
@@ -353,13 +373,15 @@ html, body {
   text-transform: uppercase;
 }
 
-.styleOne, .styleTwo, .styleThree {
+.styleOne,
+.styleTwo,
+.styleThree {
   position: absolute;
   display: block;
   width: 100%;
   max-width: 278px;
   height: 60px;
-  border: 1px solid ;
+  border: 1px solid;
 
   transform-origin: left;
   transform: skewY(-25deg);
@@ -378,7 +400,7 @@ html, body {
   top: 80px;
   transform-origin: left;
   background-color: var(--color-section-title);
-  transform: skewY(25deg);   
+  transform: skewY(25deg);
 }
 
 .section-number {
@@ -386,7 +408,7 @@ html, body {
   bottom: 15px;
   right: 0px;
   color: var(--color-section-title);
-  font-size: 30px;  
+  font-size: 30px;
 }
 
 
@@ -447,8 +469,8 @@ html, body {
 
 
 /* Media Queries */
-@media (max-width: 968px){
-  .section{
+@media (max-width: 968px) {
+  .section {
     width: 100%;
   }
 }
@@ -463,27 +485,28 @@ html, body {
   display: grid;
   grid-template-columns: repeat(auto-fill, 100px);
   gap: 20px;
-  padding: 10px;
+  padding: 0px;
   margin-bottom: 20px;
   flex: 1;
 }
 
 .skill-square {
+  box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.1);
   position: relative;
+  background-color: var(--color-background-dark);
   width: 100px;
   height: 100px;
-  background-color: #2E2E2E;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: transform 0.3s, box-shadow 0.1s;
   text-align: center;
 }
 
 .skill-square:hover {
-  transform: scale(1.25);
+  transform: scale(1.05);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
 }
 
@@ -502,5 +525,99 @@ html, body {
   transition: transform 0.3s;
 }
 
+/* ---------------- */
+
+.project-container {
+  padding: 1.5rem;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.project-container:hover {
+  transform: scale(1.05);
+}
+
+.text-area-underline {
+  border-bottom: 1px solid white;
+}
+
 /* ----------------------------------------------------------------- */
 
+.light-bg-effect {
+  /* border: 1px solid black; */
+  box-shadow: 10px 10px 35px rgba(255, 255, 255, 0.1);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #D2B48C;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  margin-left: -2px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.container::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: -20px;
+  border: medium solid #D2B48C;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #D2B48C transparent transparent;
+}
+
+.content {
+  color: var(--color-text-light);
+  padding: 20px 30px;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.content:hover {
+  transform: scale(1.05);
+  background-image: "/images/ts_logo.png";
+  cursor: pointer;
+}
+
+.content h2 {
+  margin-top: 0;
+  color: #D2B48C;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::before {
+    left: 10px;
+  }
+
+  .container {
+    padding-left: 70px;
+    margin-left: 30px;
+  }
+
+  .container::before {
+    left: -10px;
+  }
+}

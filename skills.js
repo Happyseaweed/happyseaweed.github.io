@@ -1,11 +1,15 @@
-const skillsData = [
+const languageSkillsData = [
   { name: "C++", image: "./images/cpp_logo.png", title: "C++" },
   { name: "Java", image: "./images/java_logo.png", title: "Java" },
   { name: "Python", image: "./images/python_logo.png", title: "Python" },
   { name: "Typescript", image: "./images/ts_logo.png", title: "Typescript" },
   { name: "Javascript", image: "./images/js_logo.png", title: "Javascript" },
+];
+
+const librarySkillsData = [
   { name: "React", image: "./images/react_logo.png", title: "React" },
-  { name: "Three JS", image: "./images/threejs_logo.png", title: "Three JS" },
+  { name: "NodeJS", image: "./images/node_logo.png", title: "NodeJS" },
+  { name: "Three JS", image: "./images/threejs_logo.png", title: "ThreeJS" },
   { name: "OpenCV", image: "./images/opencv_logo.png", title: "OpenCV" },
   {
     name: "Media Pipe",
@@ -18,30 +22,21 @@ const skillsData = [
     image: "./images/springboot_logo.png",
     title: "Spring Boot"
   },
+];
+
+const otherSkillsData = [
   { name: "Git", image: "./images/git_logo.png", title: "Git" },
-  { name: "Blender", image: "./images/blender_logo.png", title: "Blender" },
+  { name: "Docker", image: "./images/docker_logo.png", title: "Docker" },
+  { name: "Kubernetes", image: "./images/kub_logo.png", title: "Kubernetes" },
+  { name: "AWS", image: "./images/aws_logo.png", title: "AWS" },
   {
     name: "Microsoft Azure",
     image: "./images/azure_logo.png",
-    title: "Microsoft Azure"
+    title: "MS Azure"
   },
-  { name: "Docker", image: "./images/docker_logo.png", title: "Docker" },
-  { name: "Figma", image: "./images/figma_logo.png", title: "Figma" }
+  { name: "Figma", image: "./images/figma_logo.png", title: "Figma" },
+  { name: "Blender", image: "./images/blender_logo.png", title: "Blender" },
 ];
-
-document.addEventListener("DOMContentLoaded", function () {
-  const skillsContainer = document.getElementById("skillsContainer");
-
-  skillsData.forEach((skill) => {
-    const skillHtml = `
-        <div class="skill-card">
-          <img loading="lazy" src="${skill.image}" title="${skill.title}" alt="${skill.name}"/>
-          <div class="skill-name">${skill.name}</div>
-        </div>
-      `;
-    skillsContainer.innerHTML += skillHtml;
-  });
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   const headers = document.querySelectorAll(".collapsible-header");
@@ -59,4 +54,35 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  function populateSkills(containerId, skillsData) {
+    const container = document.getElementById(containerId);
+
+    skillsData.forEach(skill => {
+        const skillSquare = document.createElement("div");
+        skillSquare.className = "skill-square";
+
+        const skillImage = document.createElement("img");
+        skillImage.src = skill.image;
+        skillImage.alt = skill.title;
+        skillImage.className = "skill-image";
+
+        const skillTitle = document.createElement("div");
+        skillTitle.className = "skill-title";
+        skillTitle.textContent = skill.title;
+
+        skillSquare.appendChild(skillImage);
+        skillSquare.appendChild(skillTitle);
+        container.appendChild(skillSquare);
+    });
+  }
+
+  populateSkills("languageSkillsContainer", languageSkillsData);
+  populateSkills("librarySkillsContainer", librarySkillsData);
+  populateSkills("otherSkillsContainer", otherSkillsData);
+
 });

@@ -12,11 +12,7 @@ export default class Floor {
     setFloor(){
         this.geometry = new THREE.PlaneGeometry(200, 200);
         this.material = new THREE.MeshStandardMaterial({
-            // color: 0xffffff,
-            // color: 0x4E4B37,
-            color: 0x98bfbe,
-            // color: 0xB1C449,
-            // color: 0x788532,
+            color: 0x2e2e2e,
             side: THREE.BackSide,
         });
         
@@ -24,7 +20,7 @@ export default class Floor {
         this.scene.add(this.plane);
         this.plane.rotation.x = Math.PI / 2;
         this.plane.position.y = -0.3;
-        this.plane.receiveShadow = true;
+        this.plane.receiveShadow = false;
     }
 
     resize() {

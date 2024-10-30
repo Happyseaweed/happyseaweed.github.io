@@ -72,6 +72,11 @@ export default class Campsite {
         const materialPainting_bdo = new THREE.MeshBasicMaterial({color: 0xffffff, map: bdo});
         bdo.colorSpace = THREE.SRGBColorSpace;
         bdo.mapping = THREE.UVMapping;
+
+        const trend = new THREE.TextureLoader().load('images/trend_logo.png', ((texture) => callbackLogo(texture, materialPainting_trend, 0.038, 3.48, 1.33, -2.46)));
+        const materialPainting_trend = new THREE.MeshBasicMaterial({color: 0xffffff, map: trend});
+        trend.colorSpace = THREE.SRGBColorSpace;
+        trend.mapping = THREE.UVMapping;
         
         const computerScreen = new THREE.TextureLoader().load('textures/computer_screen.png', ((texture) => callbackLogo(texture, materialPainting_computerScreen, 0.0295, -2.145, 1.226, -0.785)));
         computerScreen.flipY = false;

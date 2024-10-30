@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./images/web_icon_camping.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./dist/output.css" rel="stylesheet" />
-    <title>Siwei's Campsite</title>
-  </head>
 
-  <body class="light-theme">
-    <div class="experience">
-      <canvas class="experience-canvas"></canvas>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./images/web_icon_camping.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <title>Siwei's Campsite</title>
+</head>
 
-    <div class="page">
-      <!-- Light/Dark theme toggle disabled, as no shadow-casting lighting is used. -->
-      <!-- <div class="toggle-bar top-10 right-6">
+<body class="light-theme">
+  <div class="experience">
+    <canvas class="experience-canvas"></canvas>
+  </div>
+
+  <div class="page">
+    <!-- Light/Dark theme toggle disabled, as no shadow-casting lighting is used. -->
+    <!-- <div class="toggle-bar top-10 right-6">
         <button class="toggle-button">
           <div class="sun-wrapper">
             <svg
@@ -47,178 +48,203 @@
         </button>
       </div> -->
 
-      <div class="page-wrapper" id="content">
-        <section class="hero">
-          <div class="hero-wrapper">
-            <div
-              class="hero-main p-10 box-border rounded-[20px] absolute left-0 bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28"
-            >
-              <h1 class="hero-main-title text-4xl sm:text-6xl">
-                Siwei's Campsite
-              </h1>
-              <p
-                class="hero-main-description break-words font-medium text-sm md:text-xl mt-[20px]"
-              >
-                A wild Siwei in his natural habitat, tinkering away on some bizzare ideas. 
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <div class="first-move section-margin"></div>
-
-        <section class="first-section section left">
-          <div class="section-intro-wrapper map-move">
-            <h1 class="section-title">
-              <span class="section-title-text">About Me</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
+    <div class="page-wrapper" id="content">
+      <section class="hero">
+        <div class="hero-wrapper">
+          <div
+            class="hero-main p-10 box-border rounded-[20px] absolute left-0 bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-28">
+            <h1 class="hero-main-title text-4xl sm:text-6xl">
+              Siwei's Campsite
             </h1>
-
-            <span class="section-number first-move-detail">01</span>
+            <p class="hero-main-description break-words font-medium text-sm md:text-xl mt-[20px]">
+              A wild Siwei in his natural habitat, tinkering away on some bizzare ideas.
+            </p>
           </div>
+        </div>
+      </section>
 
-          <div class="section-detail-wrapper">
-            <div
-              class="flex flex-col sm:flex-row min-[969px]:flex-col 2xl:flex-row"
-            >
-              <div class="shrink-0 mt-[70px] mr-[10px] place-content-center">
-                <img
-                  class="w-96 min-[640px]:w-72 min-[969px]:w-64 2xl:w-80 rounded-xl place-content-center mx-auto"
-                  src="./images/siwei_zipline.jpg"
-                />
-              </div>
+      <div class="first-move section-margin"></div>
 
+      <!-- About me Section -->
+      <section class="first-section section left lg:m-10">
+        <div class="section-intro-wrapper map-move">
+          <h1 class="section-title">
+            <span class="section-title-text">About Me</span>
+            <div class="section-title-decoration styleOne"></div>
+            <div class="section-title-decoration styleTwo"></div>
+            <div class="section-title-decoration styleThree"></div>
+          </h1>
+
+          <span class="section-number first-move-detail">01</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <div class="flex flex-col sm:flex-row min-[969px]:flex-col 2xl:flex-row">
+            <div class="shrink-0 mr-[10px] place-content-center align-middle">
+              <img
+                class="w-96 min-[640px]:w-72 min-[969px]:w-64 2xl:w-80 rounded-xl place-content-center mx-auto light-bg-effect"
+                src="./images/siwei_zipline.jpg" />
+            </div>
+
+            <div class="flex justify-center items-center p-2">
               <div>
-                <h2 class="section-heading p-2 mt-[64px]">
+                <h2 class="section-heading p-2">
                   Hey there! I'm Siwei
                 </h2>
                 <p class="p-2 mt-4 text-lg">
                   I'm a computer science student at the
-                  <a
-                    class="waterloo-link"
-                    href="https://en.wikipedia.org/wiki/University_of_Waterloo"
-                    target="_blank"
-                    >University of Waterloo</a
-                  >.
+                  <a class="waterloo-link" href="https://en.wikipedia.org/wiki/University_of_Waterloo"
+                    target="_blank">University of Waterloo</a>.
                 </p>
 
                 <p class="p-2 mt-4 text-lg">
-                  I tackle challenging problems from a
-                  <a class="creative-link" href="#">creative</a> point of view,
-                  striving to find the most optimized and elegant solution.
+                  I like to work on challenging problems from a
+                  <a class="creative-link" href="#">creative</a> point of view, always
+                  striving to find an optimized and elegant solution!
                 </p>
-                <!-- Corny jokes, commented out to reduce corniness (-_-*)  -->
-                <!-- <p class="p-4">In my book, challenging problems are just like piñatas – smack 'em with the right idea, and solutions come tumbling out in a shower of confetti!</p> -->
               </div>
             </div>
-
-
-            <div class="m-1 p-9 flex justify-between">
-              <a href="#"><img class="w-7" src="images/github-icon.png"></a>
-              <a href="#"><img class="w-7" src="images/linkedin-icon.png"></a>
-              <a href="#"><img class="w-7" src="images/mail-icon.png"></a>
-            </div>
-
-            <div class="m-1">
-              <div class="collapsible-header-container flex justify-center">
-                <h2
-                  class="collapsible-header text-center text-xl font-bold leading-10 mt-[100px]"
-                >
-                  More About Me
-                </h2> 
-              </div>
-              <div class="collapsible-content">
-                <div class="shrink-0 mt-[70px] mb-[70px] place-content-center flex-row">
-                  <img
-                    class="w-96 min-[640px]:w-72 min-[969px]:w-96 2xl:w-96 rounded-xl place-content-center mx-auto"
-                    src="./images/wilderness2_hi-res.jpg"
-                  />
-                </div>
-                <p class="p-2 text-lg">
-                  In my spare time, I like to listen to music and play the
-                  guitar and piano.
-                  <a
-                    class="music-link"
-                    href=""
-                    target="_blank"
-                    >Music</a
-                  >
-                  is a big part of my life as it helps me think as well as
-                  relax.
-                </p>
-
-                <div class="shrink-0 mt-[70px] mb-[70px] place-content-center flex-row">
-                  <img
-                    class="w-96 min-[640px]:w-72 min-[969px]:w-96 2xl:w-96 rounded-xl place-content-center mx-auto"
-                    src="./images/camp_fire_hi-res.jpg"
-                  />
-                </div>
-                <p class="p-2 text-lg">
-                  I like getting my hands dirty and building things. The joy of designing, prototyping, and building just to bring an idea to life is absolutely unmatched.
-                </p>
-
-              </div>
-            </div>
-            
-            <!-- (sd): Remove this line or not? Can't decide, so will try it removed first. -->
-            <!-- <hr class="mt-[100px]" /> -->
-            <h3 class="m-1 section-heading mt-[100px]">What I'm up to now:</h3>
-
-            <ul class="list-none">
-              <li class="ml-10 mt-5 list-item">
-                <div class="w-full flex-row flex">
-                  <a class="mr-6" href="#">
-                    <img class="w-16 rounded-md" src="textures/bdo_logo.png">
-                  </a>
-                  <p>
-                    SWE intern at
-                    <a class="bdo-link" href="https://bdo.ca/" target="_blank"
-                      >BDO Canada LLP</a
-                    >, working on AI chatbots and task automations.
-                  </p>
-                </div>
-              </li>
-              <li class="ml-10 mt-5 list-item">
-                <div class="w-full flex-row flex">
-                  <a class="mr-6" href="#">
-                    <img class="w-20 rounded-md" src="textures/waterloo_logo.png">
-                  </a>
-                  <p>
-                    Software Lead for UWaterloo BioMechatronics Design Team,
-                    building EMG-powered prosthetics.
-                  </p>
-                </div>
-              </li>
-            </ul>
-
-            <!-- Skills table -->
-            <h3 class="m-1 section-heading mt-[100px]">What I work with:</h3>
-
-            <div
-              id="skillsContainer"
-              class="w-full min-[1687px]:flex min-[1687px]:flex-row min-[1687px]:justify-between mt-5"
-            ></div>
-          </div>
-        </section>
-
-        <div class="second-move section-margin"></div>
-
-        <section class="second-section section right">
-          <div class="section-intro-wrapper">
-            <h1 class="section-title">
-              <span class="section-title-text">My Projects</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
-            </h1>
-
-            <span class="section-number">02</span>
           </div>
 
-          <div class="section-detail-wrapper">
-            <!-- Project showcase # 1 --------------------------------------------------------------------------------------------------------------------------------- -->
+          <div class="flex flex-col sm:flex-row min-[969px]:flex-col 2xl:flex-row">
+            <div class="flex justify-center items-center p-2">
+              <div>
+                <p class="p-2 text-lg">
+                  I like getting my hands dirty and building things. I'm interested in computer networking, RL Agents
+                  and distributed systems! I also love learning by building things from scratch.
+
+                </p>
+                <p class="p-2 text-lg mt-4">
+                  In my personal life, I enjoy music, cooking, adventures, and going to the gym.
+                </p>
+              </div>
+            </div>
+            <div class="shrink-0 mt-[70px] mb-[70px] place-content-center flex-row">
+              <img
+                class="w-96 min-[640px]:w-72 min-[969px]:w-64 2xl:w-80 rounded-xl place-content-center mx-auto light-bg-effect"
+                src="./images/camp_fire_hi-res.jpg" />
+            </div>
+          </div>
+          <div class="m-1 p-9 flex justify-between">
+            <a href="https://github.com/Happyseaweed" target="_blank"><img class="w-10"
+                src="images/github-icon.png"></a>
+            <a href="https://ca.linkedin.com/in/siwei-du-6235a31b1" target="_blank"><img class="w-10"
+                src="images/linkedin-icon.png"></a>
+            <a href="mailto:contact.siwei@gmail.com" target="_blank"><img class="w-10" src="images/mail-icon.png"></a>
+          </div>
+
+
+          <!-- (sd): Remove this line or not? Can't decide, so will try it removed first. -->
+          <hr class="mt-[60px]" />
+          <h1 class="m-10 section-heading">What I've Been Up To:</h1>
+
+          <!-- Work Experience Timeline -->
+          <div class="timeline">
+            <div class="container">
+              <div class="content">
+                <h2>Software Developer Intern</h2>
+                <p><a class="trend-link" href="https://www.trendmicro.com/en_ca/business.html" target="_blank">Trend Micro</a> | Sep 2024 - Present</p>
+                <p>Developing internal tooling and extending custom in-house language and parser.</p>
+              </div>
+            </div>
+            <div class="container">
+              <div class="content">
+                <h2>Software Team Lead</h2>
+                <p>UW BioMech Design Team | Sep 2023 - Present</p>
+                <p>Working on collection and processing of EMG sensor data with ESP32.</p>
+              </div>
+            </div>
+            <div class="container">
+              <div class="content">
+                <h2>Software Developer Co-op</h2>
+                <p><a class="bdo-link" href="https://www.bdo.ca/" target="_blank">BDO Canada LLC</a> | Jan 2024 - May 2024</p>
+                <p>Worked on timesheet automation bot using LLMs and vector embeddings.</p>
+              </div>
+            </div>
+            <div class="container">
+              <div class="content">
+                <h2>Software Developer Co-op</h2>
+                <p><a class="bdo-link" href="https://www.bdo.ca/" target="_blank">BDO Canada LLC</a> | May 2023 - Sep 2023</p>
+                <p>Worked on full-stack development of SaaS Cloud management portal.</p>
+              </div>
+            </div>
+            <!-- Add more containers as needed -->
+          </div>
+
+
+          <!-- Skills table -->
+          <h3 class="m-1 section-heading mt-[100px]">What I work with:</h3>
+
+          <div id="skillsContainer"
+            class="w-full min-[1687px]:flex min-[1687px]:flex-row min-[1687px]:justify-between mt-5">
+            <div id="languageSkillsContainer" class="skills-section"></div>
+            <div id="librarySkillsContainer" class="skills-section"></div>
+            <div id="otherSkillsContainer" class="skills-section"></div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="second-move section-margin"></div>
+
+
+      <!-- Projects Section -->
+      <section class="second-section section right lg:m-10">
+        <div class="section-intro-wrapper">
+          <h1 class="section-title">
+            <span class="section-title-text">My Projects</span>
+            <div class="section-title-decoration styleOne"></div>
+            <div class="section-title-decoration styleTwo"></div>
+            <div class="section-title-decoration styleThree"></div>
+          </h1>
+
+          <span class="section-number">02</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <!-- Project showcase # 0 --------------------------------------------------------------------------------------------------------------------------------- -->
+          <div class="project-container light-bg-effect">
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8]">
+              SFML 2D Game Engine 
+            </h3>
+
+            <div class="flex flex-row w-full">
+              <div class="flex-grow">
+                <h3 class="text-xs">
+                  <div class="p-1 box-border inline-block bg-green-600 rounded-xl">
+                    C++20 
+                  </div>
+                  | SFML 
+                </h3>
+              </div>
+
+              <div class="float-right flex items-center">
+                <h3 class="text-xs">Ongoing</h3>
+              </div>
+            </div>
+
+            <!-- Brief description -->
+            <div class="flex flex-row w-full m-4">
+              <div class="w-12 sm:w-20">
+                <img loading="lazy" href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20" />
+              </div>
+              <div class="m-3">
+                <p class="text-sm">
+                  2D SFML Game Engine with the ability to build endless-mode, rogue-like games.
+                  Can also be used as a reinforcement learning environment for training agents or
+                  observing experiments.
+                </p>
+              </div>
+            </div>
+
+            <div class="">
+              <a href="https://github.com/Happyseaweed/abyssalOdyssey" target="_blank"><img loading="lazy"
+                  src="./images/work_in_progress.jpg" class="w-full place-self-center rounded-[20px]" /></a>
+            </div>
+
+          </div>
+          <!-- Project showcase # 1 --------------------------------------------------------------------------------------------------------------------------------- -->
+          <div class="project-container light-bg-effect mt-[140px]">
             <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8]">
               3D Interactive Engine
             </h3>
@@ -226,9 +252,7 @@
             <div class="flex flex-row w-full">
               <div class="flex-grow">
                 <h3 class="text-xs">
-                  <div
-                    class="p-1 box-border inline-block bg-yellow-600 rounded-xl"
-                  >
+                  <div class="p-1 box-border inline-block bg-yellow-600 rounded-xl">
                     Python
                   </div>
                   | OpenCV, MediaPipe, PyGame
@@ -243,12 +267,7 @@
             <!-- Brief description -->
             <div class="flex flex-row w-full m-4">
               <div class="w-12 sm:w-20">
-                <img
-                  loading="lazy"
-                  href="#"
-                  src="./images/quotation_mark.png"
-                  class="w-12 sm:w-20"
-                />
+                <img loading="lazy" href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20" />
               </div>
               <div class="m-3">
                 <p class="text-sm">
@@ -260,27 +279,23 @@
             </div>
 
             <div class="">
-              <a
-                href="https://github.com/Happyseaweed/3D-Interactive-Engine"
-                target="_blank"
-                ><img
-                  loading="lazy"
-                  src="./images/interactive_engine_thumbnail.png"
-                  class="w-full place-self-center rounded-[20px]"
-              /></a>
+              <a href="https://github.com/Happyseaweed/3D-Interactive-Engine" target="_blank"><img loading="lazy"
+                  src="./images/interactive_engine_thumbnail.png" class="w-full place-self-center rounded-[20px]" /></a>
             </div>
 
-            <!-- Project showcase # 2 --------------------------------------------------------------------------------------------------------------------------------- -->
-            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8] mt-[140px]">
+          </div>
+
+          <!-- Project showcase # 2 --------------------------------------------------------------------------------------------------------------------------------- -->
+          <div class="project-container light-bg-effect mt-[140px]">
+
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8]">
               Personal Website
             </h3>
 
             <div class="flex flex-row w-full">
               <div class="flex-grow">
                 <h3 class="text-xs">
-                  <div
-                    class="p-1 box-border inline-block bg-purple-600 rounded-xl"
-                  >
+                  <div class="p-1 box-border inline-block bg-purple-600 rounded-xl">
                     Three.JS
                   </div>
                   | Tailwindcss, HTML/CSS, Javascript
@@ -295,12 +310,7 @@
             <!-- Brief description -->
             <div class="flex flex-row w-full m-4">
               <div class="w-12 sm:w-20">
-                <img
-                  loading="lazy"
-                  href="#"
-                  src="./images/quotation_mark.png"
-                  class="w-12 sm:w-20"
-                />
+                <img loading="lazy" href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20" />
               </div>
               <div class="m-3">
                 <p class="text-sm">
@@ -311,25 +321,21 @@
             </div>
 
             <div class="">
-              <a href="#"
-                ><img
-                  loading="lazy"
-                  src="./images/personal_website_thumbnail.png"
-                  class="w-full place-self-center rounded-[20px]"
-              /></a>
+              <a href="#"><img loading="lazy" src="./images/personal_website_thumbnail.png"
+                  class="w-full place-self-center rounded-[20px]" /></a>
             </div>
+          </div>
 
-            <!-- Project showcase # 3 --------------------------------------------------------------------------------------------------------------------------------- -->
-            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8] mt-[140px]">
+          <!-- Project showcase # 3 --------------------------------------------------------------------------------------------------------------------------------- -->
+          <div class="project-container light-bg-effect mt-[140px]">
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8]">
               N-body Simulation
             </h3>
 
             <div class="flex flex-row w-full">
               <div class="flex-grow">
                 <h3 class="text-xs">
-                  <div
-                    class="p-1 box-border inline-block bg-blue-600 rounded-xl"
-                  >
+                  <div class="p-1 box-border inline-block bg-blue-600 rounded-xl">
                     C++
                   </div>
                   | SFML
@@ -344,12 +350,7 @@
             <!-- Brief description -->
             <div class="flex flex-row w-full m-4">
               <div class="w-12 sm:w-20">
-                <img
-                  loading="lazy"
-                  href="#"
-                  src="./images/quotation_mark.png"
-                  class="w-12 sm:w-20"
-                />
+                <img loading="lazy" href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20" />
               </div>
               <div class="m-3">
                 <p class="text-sm">
@@ -360,27 +361,23 @@
             </div>
 
             <div class="">
-              <a
-                href="https://github.com/Happyseaweed/planetEngine"
-                target="_blank"
-                ><img
-                  loading="lazy"
-                  src="./images/nbody_thumbnail.png"
-                  class="w-full place-self-center rounded-[20px]"
-              /></a>
+              <a href="https://github.com/Happyseaweed/planetEngine" target="_blank"><img loading="lazy"
+                  src="./images/nbody_thumbnail.png" class="w-full place-self-center rounded-[20px]" /></a>
             </div>
+          </div>
 
-            <!-- Currently Working on ---------------------------------------------------------------------------------------------------------------------------------- -->
-            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8] mt-[140px]">
+
+          <!-- Project showcase # 4 --------------------------------------------------------------------------------------------------------------------------------- -->
+          <div class="project-container light-bg-effect mt-[140px]">
+
+            <h3 class="text-3xl lg:text-4xl font-bold leading-[1.8]">
               Inverse Kinematic Robotic Arm
             </h3>
 
             <div class="flex flex-row w-full">
               <div class="flex-grow">
                 <h3 class="text-xs">
-                  <div
-                    class="p-1 box-border inline-block bg-blue-600 rounded-xl"
-                  >
+                  <div class="p-1 box-border inline-block bg-blue-600 rounded-xl">
                     C++
                   </div>
                   | Arduino
@@ -388,19 +385,14 @@
               </div>
 
               <div class="float-right flex items-center">
-                <h3 class="text-xs">In Progress</h3>
+                <h3 class="text-xs">Ongoing</h3>
               </div>
             </div>
 
             <!-- Brief description -->
             <div class="flex flex-row w-full m-4">
               <div class="w-12 sm:w-20">
-                <img
-                  loading="lazy"
-                  href="#"
-                  src="./images/quotation_mark.png"
-                  class="w-12 sm:w-20"
-                />
+                <img loading="lazy" href="#" src="./images/quotation_mark.png" class="w-12 sm:w-20" />
               </div>
               <div class="m-3">
                 <p class="text-sm">
@@ -411,104 +403,82 @@
             </div>
 
             <div class="">
-              <img
-                loading="lazy"
-                src="./images/work_in_progress.jpg"
-                class="w-full place-self-center rounded-[20px]"
-              />
-            </div>
-          </div>
-        </section>
-
-        <div class="third-move section-margin"></div>
-
-        <section class="third-section section left">
-          <div class="section-intro-wrapper">
-            <h1 class="section-title">
-              <span class="section-title-text">Contact Me</span>
-              <div class="section-title-decoration styleOne"></div>
-              <div class="section-title-decoration styleTwo"></div>
-              <div class="section-title-decoration styleThree"></div>
-            </h1>
-
-            <span class="section-number">03</span>
-          </div>
-
-          <div class="section-detail-wrapper">
-            <!-- Contact form -->
-            <div class="box-border p-3 bg-gray-200 rounded-xl">
-              <form
-                action="https://formsubmit.co/34a1a9b7ce4e829d07b83ba56ee9247f "
-                method="POST"
-                class="flex flex-col justify-between"
-              >
-                <div class="flex flex-col box-border p-2 rounded-xl bg-white">
-                  <label for="fname" class="text-gray-700">Name:</label>
-                  <textarea
-                    name="name"
-                    class="text-black resize-none border-none outline-none"
-                    maxlength="30"
-                    spellcheck="false"
-                    rows="1"
-                    required
-                  ></textarea>
-                </div>
-
-                <div
-                  class="flex flex-col box-border p-2 rounded-xl bg-white mt-[20px]"
-                >
-                  <label for="email" class="text-gray-700">Email:</label>
-                  <textarea
-                    name="email"
-                    type="email"
-                    class="text-black resize-none border-none outline-none"
-                    maxlength="40"
-                    spellcheck="false"
-                    rows="1"
-                  ></textarea>
-                </div>
-
-                <div
-                  class="flex flex-col box-border p-2 rounded-xl bg-white mt-[20px]"
-                >
-                  <label for="msg" class="text-gray-700">Message:</label>
-                  <textarea
-                    name="message"
-                    class="text-black resize-none border-none outline-none"
-                    spellcheck="false"
-                    rows="10"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="w-full box-border p-2 bg-[#111518ff] rounded-xl mt-[20px] hover:bg-white hover:text-[#111518ff] duration-200"
-                >
-                  Submit
-                </button>
-              </form>
+              <img loading="lazy" src="./images/work_in_progress.jpg" class="w-full place-self-center rounded-[20px]" />
             </div>
 
-            <p class="mt-[50px] mb-[50px]">
-              Thanks for stopping by! If you would like to get in touch with me,
-              feel free to connect with me through any of the following.
-            </p>
- 
-            <div class="m-1 p-9 flex justify-between">
-              <a href="#"><img class="w-7" src="images/github-icon.png"></a>
-              <a href="#"><img class="w-7" src="images/linkedin-icon.png"></a>
-              <a href="#"><img class="w-7" src="images/mail-icon.png"></a>
-            </div>           
           </div>
-        </section>
+      </section>
 
-        <div class="fourth-move section-margin"></div>
-        <div class="section-margin"></div>
-        <div class="w-full flex justify-center">Designed and Built by Siwei Du</div>
+      <div class="third-move section-margin"></div>
+
+      <!--  Contact me Section  -->
+      <section class="third-section section left lg:m-10">
+        <div class="section-intro-wrapper">
+          <h1 class="section-title">
+            <span class="section-title-text">Contact Me</span>
+            <div class="section-title-decoration styleOne"></div>
+            <div class="section-title-decoration styleTwo"></div>
+            <div class="section-title-decoration styleThree"></div>
+          </h1>
+
+          <span class="section-number">03</span>
+        </div>
+
+        <div class="section-detail-wrapper">
+          <!-- Contact form -->
+          <div class="box-border p-3 bg-[#111518ff] rounded-xl light-bg-effect">
+            <form action="https://formsubmit.co/34a1a9b7ce4e829d07b83ba56ee9247f " method="POST"
+              class="flex flex-col justify-between">
+              <div class="flex flex-col box-border p-2 rounded-xl bg-[#111518ff]">
+                <label for="fname" class="text-white-700">Name:</label>
+                <textarea name="name" class="text-white resize-none border-none outline-none bg-[#111518ff] text-area-underline" maxlength="30"
+                  spellcheck="false" rows="1" required></textarea>
+              </div>
+
+              <div class="flex flex-col box-border p-2 rounded-xl bg-[#111518ff] mt-[20px]">
+                <label for="email" class="text-white-700">Email:</label>
+                <textarea name="email" type="email" class="text-white resize-none border-none outline-none bg-[#111518ff] text-area-underline"
+                  maxlength="40" spellcheck="false" rows="1"></textarea>
+              </div>
+
+              <div class="flex flex-col box-border p-2 rounded-xl bg-[#111518ff] mt-[20px]">
+                <label for="msg" class="text-white-700">Message:</label>
+                <textarea name="message" class="text-white resize-none border-none outline-none bg-[#111518ff] text-area-underline" spellcheck="false"
+                  rows="10"></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full box-border p-2 bg-[#111518ff] rounded-xl mt-[20px] hover:bg-white hover:text-[#111518ff] duration-200">
+                Submit
+              </button>
+            </form>
+          </div>
+
+          <p class="mt-[50px] mb-[50px]">
+            Thanks for stopping by! If you would like to get in touch with me,
+            feel free to connect with me through any of the following.
+          </p>
+
+          <div class="m-1 p-9 flex justify-between">
+            <a href="https://github.com/Happyseaweed"><img class="w-7" src="images/github-icon.png"></a>
+            <a href="https://ca.linkedin.com/in/siwei-du-6235a31b1"><img class="w-7" src="images/linkedin-icon.png"></a>
+            <a href="mailto:contact.siwei@gmail.com"><img class="w-7" src="images/mail-icon.png"></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="fourth-move section-margin"></div>
+      <div class="section-margin"></div>
+      <div class="w-full flex justify-center p-10">
+        <div class="light-bg-effect bg-[#ECECEC] p-2 rounded-xl">
+          Designed and Built by Siwei Du 🏕️
+        </div>
       </div>
     </div>
+  </div>
 
-    <script type="module" src="/main.js"></script>
-    <script type="module" src="skills.js"></script>
-  </body>
+  <script type="module" src="/main.js"></script>
+  <script type="module" src="skills.js"></script>
+</body>
+
 </html>

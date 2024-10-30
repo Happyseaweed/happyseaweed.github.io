@@ -10,14 +10,14 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "../../node_modules/three/examples/jsm/loaders/DRACOLoader.js"
 
 
-export default class Resources extends EventEmitter{
+export default class Resources extends EventEmitter {
     constructor(assets) {
         super();
         this.experience = new Experience();
         this.renderer = this.experience.renderer;
 
-        this.assets = assets; 
-        
+        this.assets = assets;
+
         this.items = {};
         this.queue = this.assets.length;
         this.loaded = 0;
@@ -31,30 +31,46 @@ export default class Resources extends EventEmitter{
     setLoaders() {
         // gltf loader needed to load glb
         // dracoLoader needed to "decompress" if model exported with compression
+        this.loadingManager = new THREE.LoadingManager();
+
+        this.loadingManager.onStart = function (url, itemsLoaded, itemsTotal) {
+            console.log(`Loading manager loading assets...\n`);
+        }
+        
+        this.loadingManager.onProgress = function (url, itemsLoaded, itemsTotal) {
+            // const progressBar = document.getElementById('progress-bar');
+            // progressBar.value = (itemsLoaded / itemsTotal) * 100;
+        }
+
+        this.loadingManager.onLoad = function (url, itemsLoaded, itemsTotal) {
+            console.log(`Loading manager done loading assets!\n`);
+            const progressBarContainer = document.querySelector('.progress-bar-container');
+            progressBarContainer.style.display = 'none';
+        }
+
         this.loaders = {}
-        this.loaders.gltfLoader = new GLTFLoader();
+        this.loaders.gltfLoader = new GLTFLoader(this.loadingManager);
         this.loaders.dracoLoader = new DRACOLoader();
         this.loaders.dracoLoader.setDecoderPath("/draco/");
         this.loaders.gltfLoader.setDRACOLoader(this.loaders.dracoLoader);
     }
 
     startLoading() {
-        console.log(`Loading assets (${this.assets.length})...`)
-         for(const asset of this.assets) {
-            if (asset.type === "glbModel"){
-                this.loaders.gltfLoader.load(asset.path, (file)=>{
-                    
+        for (const asset of this.assets) {
+            if (asset.type === "glbModel") {
+                this.loaders.gltfLoader.load(asset.path, (file) => {
+
                     this.singleAssetLoaded(asset, file);
                 });
             }
-            else if (asset.type === "imageTexture"){
+            else if (asset.type === "imageTexture") {
                 const texture = new THREE.TextureLoader().load(asset.path);
                 this.singleAssetLoaded(asset, texture);
             }
-            else if (asset.type === "videoTexture"){
+            else if (asset.type === "videoTexture") {
                 this.video = {};
                 this.videoTexture = {};
-                
+
                 this.video[asset.name] = document.createElement("video");
                 this.video[asset.name].source = asset.path;
                 this.video[asset.name].playsInline = true;
@@ -65,7 +81,7 @@ export default class Resources extends EventEmitter{
                 this.video[asset.name].play();
 
                 this.videoTexture[asset.name] = new THREE.VideoTexture(this.video[asset.name]);
-                
+
                 // this.videoTexture[asset.name].flipY = true;
                 this.videoTexture[asset.name].minFilter = THREE.NearestFilter;
                 this.videoTexture[asset.name].magFilter = THREE.NearestFilter;
@@ -74,17 +90,17 @@ export default class Resources extends EventEmitter{
 
                 this.singleAssetLoaded(asset, this.videoTexture[asset.name]);
             }
-         }
+        }
     }
-    
+
     singleAssetLoaded(asset, file) {
         this.items[asset.name] = file;
         this.items[asset.name].castShadow = true;
         this.items[asset.name].receiveShadow = true;
-        
+
         this.loaded++;
         // Check if all assets are loaded:
-        if (this.loaded === this.queue){
+        if (this.loaded === this.queue) {
             console.log("All assets loaded.")
             this.emit("ready");
         }

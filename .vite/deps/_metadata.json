@@ -1,0 +1,56 @@
+{
+  "hash": "e76bc9cc",
+  "browserHash": "c1770024",
+  "optimized": {
+    "three": {
+      "src": "../../node_modules/three/build/three.module.js",
+      "file": "three.js",
+      "fileHash": "c8b641a7",
+      "needsInterop": false
+    },
+    "events": {
+      "src": "../../node_modules/events/events.js",
+      "file": "events.js",
+      "fileHash": "d584ce14",
+      "needsInterop": true
+    },
+    "three/examples/jsm/loaders/GLTFLoader.js": {
+      "src": "../../node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+      "file": "three_examples_jsm_loaders_GLTFLoader__js.js",
+      "fileHash": "8fbbc016",
+      "needsInterop": false
+    },
+    "gsap": {
+      "src": "../../node_modules/gsap/index.js",
+      "file": "gsap.js",
+      "fileHash": "25e8c552",
+      "needsInterop": false
+    },
+    "gsap/ScrollTrigger.js": {
+      "src": "../../node_modules/gsap/ScrollTrigger.js",
+      "file": "gsap_ScrollTrigger__js.js",
+      "fileHash": "de01f547",
+      "needsInterop": false
+    },
+    "stats.js": {
+      "src": "../../node_modules/stats.js/build/stats.min.js",
+      "file": "stats__js.js",
+      "fileHash": "222980bf",
+      "needsInterop": true
+    },
+    "three/addons/helpers/RectAreaLightHelper.js": {
+      "src": "../../node_modules/three/examples/jsm/helpers/RectAreaLightHelper.js",
+      "file": "three_addons_helpers_RectAreaLightHelper__js.js",
+      "fileHash": "86e1bf60",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-Z2GM3ZTV": {
+      "file": "chunk-Z2GM3ZTV.js"
+    },
+    "chunk-RSJERJUL": {
+      "file": "chunk-RSJERJUL.js"
+    }
+  }
+}

@@ -621,3 +621,9 @@ body {
     left: -10px;
   }
 }
+
+
+/* Loading Screen */
+.progress-bar-container {
+  z-index: 1000000;
+}

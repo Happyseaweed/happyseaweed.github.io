@@ -36,7 +36,7 @@ export default class Resources extends EventEmitter {
         this.loadingManager.onStart = function (url, itemsLoaded, itemsTotal) {
             console.log(`Loading manager loading assets...\n`);
         }
-        
+
         this.loadingManager.onProgress = function (url, itemsLoaded, itemsTotal) {
             // const progressBar = document.getElementById('progress-bar');
             // progressBar.value = (itemsLoaded / itemsTotal) * 100;
